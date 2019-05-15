@@ -1,0 +1,22 @@
+Added Component: Designator=R21(RESC1210(3225)_N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Case-EIA"; Value = "1210"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case-Metric"; Value = "3225"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.5 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5 %"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "4700.00 Ohm"; VariantName = "[No Variations]"
+Added Component: Designator=R22(RESC1210(3225)_L)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Case-EIA"; Value = "1210"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case-Metric"; Value = "3225"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.5 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5 %"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "3300.00 Ohm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5_ISO Pin=R21-1
+Added Pin To Net: NetName=+12_ISO Pin=R21-2
+Added Pin To Net: NetName=GND_ISO Pin=R22-1
+Added Pin To Net: NetName=+5_ISO Pin=R22-2
+Added Member To Class: ClassName=TSAL Member=Component R21 4K7 5% 1210(3225)
+Added Member To Class: ClassName=TSAL Member=Component R22 3K3 5% 1210(3225)

@@ -1,0 +1,12 @@
+Added Component: Designator=X1(Crystal 20MHz)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cfd.citizen.co.jp/english/prod-tech/product/pdf/datasheet_AT/HCM49_E.pdf"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=CAN_X1_20MHz Pin=X1-1
+Added Pin To Net: NetName=CAN_X2_20MHz Pin=X1-2
+Added Room: Name=CAN
+Added Room: Name=IMD
+Added Room: Name=LEM
+Added Room: Name=MCU
+Added Room: Name=Offboard
+Added Room: Name=TSAL

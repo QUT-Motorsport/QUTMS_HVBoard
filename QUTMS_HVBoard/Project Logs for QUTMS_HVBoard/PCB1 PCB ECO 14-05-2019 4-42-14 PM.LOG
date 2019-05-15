@@ -1,0 +1,7 @@
+Added Component: Designator=J5(Microfit_2X2_R_TH)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=HV Pin=J5-1
+Added Pin To Net: NetName=HV Pin=J5-2
+Added Pin To Net: NetName=HV_GND Pin=J5-3
+Added Pin To Net: NetName=HV_GND Pin=J5-4
+Added Member To Class: ClassName=Offboard Member=Component J5 Microfit 3.0 2x2

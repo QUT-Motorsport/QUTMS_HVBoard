@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=CAN_X1_20MHz Pin=X1-1
+Removed Pin From Net: NetName=CAN_X2_20MHz Pin=X1-2
+Added Pin To Net: NetName=CAN_X1_20MHz Pin=X1-1
+Added Pin To Net: NetName=MCU_XTAL_2 Pin=X1-1
+Added Pin To Net: NetName=CAN_X2_20MHz Pin=X1-2
+Added Pin To Net: NetName=MCU_XTAL_1 Pin=X1-2
+Added Room: Name=CAN
+Added Room: Name=IMD
+Added Room: Name=LEM
+Added Room: Name=MCU
+Added Room: Name=Offboard
+Added Room: Name=TSAL

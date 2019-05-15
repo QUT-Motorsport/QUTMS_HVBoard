@@ -1,0 +1,10 @@
+Added Pin To Net: NetName=CAN_N Pin=J4-2
+Added Pin To Net: NetName=NetC4_2 Pin=J4-11
+Change Net Name : Old Net Name=CAN_N New Net Name=NetC5_2
+Added Room: Name=CAN
+Added Room: Name=IMD
+Added Room: Name=LEM
+Added Room: Name=MCU
+Added Room: Name=Offboard
+Added Room: Name=Power
+Added Room: Name=TSAL

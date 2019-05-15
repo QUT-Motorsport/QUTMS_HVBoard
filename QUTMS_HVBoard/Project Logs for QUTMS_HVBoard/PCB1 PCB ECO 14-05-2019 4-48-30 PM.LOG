@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=HV_SENSE_ON_MOSFET Pin=Q3-1
+Removed Pin From Net: NetName=HV_SENSE_ON_MOSFET Pin=Q4-3
+Removed Pin From Net: NetName=HV_SENSE_ON_MOSFET Pin=R9-1
+Added Pin To Net: NetName=HV_SENSE_OFF_MOSFET Pin=Q3-1
+Added Pin To Net: NetName=HV_SENSE_OFF_MOSFET Pin=Q4-3
+Added Pin To Net: NetName=HV_SENSE_OFF_MOSFET Pin=R9-1
+Added Net: Name=HV_SENSE_OFF_MOSFET
