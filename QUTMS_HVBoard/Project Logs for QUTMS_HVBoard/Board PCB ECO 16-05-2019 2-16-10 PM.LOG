@@ -1,0 +1,3 @@
+Removed Member From Class: ClassName=CAN Member=X1
+Change Component Designator: OldDesignator=X1 NewDesignator=X2
+Added Member To Class: ClassName=CAN Member=Component X2 Crystal 20MHz
