@@ -412,62 +412,6 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.DRR
-DItemRevisionGUID=
-
-[GeneratedDocument2]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.EXTREP
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.GBL
-DItemRevisionGUID=
-
-[GeneratedDocument4]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.GBO
-DItemRevisionGUID=
-
-[GeneratedDocument5]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.GBS
-DItemRevisionGUID=
-
-[GeneratedDocument6]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.GKO
-DItemRevisionGUID=
-
-[GeneratedDocument7]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.GM2
-DItemRevisionGUID=
-
-[GeneratedDocument8]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.GTL
-DItemRevisionGUID=
-
-[GeneratedDocument9]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.GTO
-DItemRevisionGUID=
-
-[GeneratedDocument10]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument11]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.LDP
-DItemRevisionGUID=
-
-[GeneratedDocument12]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.REP
-DItemRevisionGUID=
-
-[GeneratedDocument13]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.RUL
-DItemRevisionGUID=
-
-[GeneratedDocument14]
-DocumentPath=Project Outputs for QUTMS_HVBoard\Board.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument15]
 DocumentPath=Project Outputs for QUTMS_HVBoard\Design Rule Check - Board.html
 DItemRevisionGUID=
 
