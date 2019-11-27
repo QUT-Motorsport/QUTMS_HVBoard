@@ -126,53 +126,53 @@ typedef enum {
 
 // MCP2517 Message Object ID
 typedef struct _MCP2517_MSG_OBJ_ID {
-	uint16_t SID : 11;
-	uint32_t EID : 18;
-	uint8_t SID11 : 1;
-	uint8_t unimplemented : 2;
+	uint16_t MCP2517_SID : 11;
+	uint32_t MCP2517_EID : 18;
+	uint8_t MCP2517_SID11 : 1;
+	uint8_t MCP2517_unimplemented : 2;
 } MCP2517_MSG_OBJ_ID;
 
 // MCP2517 Transmit Message Object Control Bits
 typedef struct _MCP2517_TX_MSG_OBJ_CTRL {
-	uint8_t DLC : 4;
-	uint8_t IDE : 1;
-	uint8_t RTR : 1;
-	uint8_t BRS : 1;
-	uint8_t FDF : 1;
-	uint8_t ESI : 1;
-	uint8_t SEQ : 7;
-	uint32_t unimplemented : 16;
+	uint8_t MCP2517_DLC : 4;
+	uint8_t MCP2517_IDE : 1;
+	uint8_t MCP2517_RTR : 1;
+	uint8_t MCP2517_BRS : 1;
+	uint8_t MCP2517_FDF : 1;
+	uint8_t MCP2517_ESI : 1;
+	uint8_t MCP2517_SEQ : 7;
+	uint32_t MCP2517_unimplemented : 16;
 } MCP2517_TX_MSG_OBJ_CTRL;
 
 // MCP2517 Transmit Message Object (TXQ and TX FIFO)
 typedef union _MCP2517_TX_MSG_OBJ {
 	struct {
-		MCP2517_MSG_OBJ_ID id;
-		MCP2517_TX_MSG_OBJ_CTRL ctrl;
-	} bF;
-	uint32_t word[3];
-	uint8_t byte[12];
+		MCP2517_MSG_OBJ_ID MCP2517_id;
+		MCP2517_TX_MSG_OBJ_CTRL MCP2517_ctrl;
+	} MCP2517_bF;
+	uint32_t MCP2517_word[3];
+	uint8_t MCP2517_byte[12];
 } MCP2517_TX_MSG_OBJ;
 
 typedef struct _MCP2517_RX_MSG_OBJ_CTRL {
-	uint8_t DLC : 4;
-	uint8_t IDE : 1;
-	uint8_t RTR : 1;
-	uint8_t BRS : 1;
-	uint8_t FDF : 1;
-	uint8_t ESI : 1;
-	uint8_t unimplemented_1 : 2;
-	uint8_t FILTHIT : 5;
-	uint32_t unimplemented_2 : 16;
+	uint8_t MCP2517_DLC : 4;
+	uint8_t MCP2517_IDE : 1;
+	uint8_t MCP2517_RTR : 1;
+	uint8_t MCP2517_BRS : 1;
+	uint8_t MCP2517_FDF : 1;
+	uint8_t MCP2517_ESI : 1;
+	uint8_t MCP2517_unimplemented_1 : 2;
+	uint8_t MCP2517_FILTHIT : 5;
+	uint32_t MCP2517_unimplemented_2 : 16;
 } MCP2517_RX_MSG_OBJ_CTRL;
 
 typedef union _MCP2517_RX_MSG_OBJ {
 	struct {
-		MCP2517_MSG_OBJ_ID id;
-		MCP2517_RX_MSG_OBJ_CTRL ctrl;
-	} bF;
-	uint32_t word[3];
-	uint8_t byte[12];
+		MCP2517_MSG_OBJ_ID MCP2517_id;
+		MCP2517_RX_MSG_OBJ_CTRL MCP2517_ctrl;
+	} MCP2517_bF;
+	uint32_t MCP2517_word[3];
+	uint8_t MCP2517_byte[12];
 } MCP2517_RX_MSG_OBJ;
 
 #endif // MCP2517_defines_H

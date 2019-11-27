@@ -15,19 +15,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   5 .debug_aranges 00000178  00000000  00000000  00000964  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000025c0  00000000  00000000  00000adc  2**0
+  6 .debug_info   000025c4  00000000  00000000  00000adc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000e5d  00000000  00000000  0000309c  2**0
+  7 .debug_abbrev 00000e2c  00000000  00000000  000030a0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000f8d  00000000  00000000  00003ef9  2**0
+  8 .debug_line   00000f8d  00000000  00000000  00003ecc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000480  00000000  00000000  00004e88  2**2
+  9 .debug_frame  00000480  00000000  00000000  00004e5c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000fca  00000000  00000000  00005308  2**0
+ 10 .debug_str    00001091  00000000  00000000  000052dc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000015c6  00000000  00000000  000062d2  2**0
+ 11 .debug_loc    000015c6  00000000  00000000  0000636d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000158  00000000  00000000  00007898  2**0
+ 12 .debug_ranges 00000158  00000000  00000000  00007933  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -912,7 +912,7 @@ void MCP2517_readMsgReceive(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
  46a:	b5 2e       	mov	r11, r21
  46c:	89 01       	movw	r16, r18
 	
-	uint8_t buff[MAX_MSG_SIZE] = {0}; // Max size of transmit message
+	uint8_t buff[MCP2517_MAX_MSG_SIZE] = {0}; // Max size of transmit message
  46e:	ce 01       	movw	r24, r28
  470:	01 96       	adiw	r24, 0x01	; 1
  472:	7c 01       	movw	r14, r24
@@ -974,10 +974,10 @@ inline uint32_t wordFromBufferAtIndex (uint8_t buff[], const uint8_t index) {
  4b6:	82 2b       	or	r24, r18
 void MCP2517_readMsgReceive(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t *data, MCP2517_RX_MSG_OBJ *rxObj) {
 	
-	uint8_t buff[MAX_MSG_SIZE] = {0}; // Max size of transmit message
+	uint8_t buff[MCP2517_MAX_MSG_SIZE] = {0}; // Max size of transmit message
 	
 	// Write instruction
-	const uint16_t regAddr = MCP2517_RAM_ADDR_START + MCP2517_readReg32(MCP2517_REG_ADDR_C1FIFOUA + (RX_FIFO * MCP2517_C1FIFO_OFFSET));
+	const uint16_t regAddr = MCP2517_RAM_ADDR_START + MCP2517_readReg32(MCP2517_REG_ADDR_C1FIFOUA + (MCP2517_RX_FIFO * MCP2517_C1FIFO_OFFSET));
  4b8:	9c 5f       	subi	r25, 0xFC	; 252
 	buff[0] = (uint8_t) ((MCP2517_INSTRUCTION_READ << 4) + ((regAddr >> 8) & 0xF));
  4ba:	9f 70       	andi	r25, 0x0F	; 15
@@ -998,38 +998,38 @@ void MCP2517_readMsgReceive(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
  4cc:	3b 81       	ldd	r19, Y+3	; 0x03
 	
 	// Get frame ID and Control bits
-	rxObj->word[0] = 0;
-	rxObj->word[1] = 0;
+	rxObj->MCP2517_word[0] = 0;
+	rxObj->MCP2517_word[1] = 0;
 	
-	rxObj->byte[0] = buff[2];
+	rxObj->MCP2517_byte[0] = buff[2];
  4ce:	f8 01       	movw	r30, r16
  4d0:	30 83       	st	Z, r19
  4d2:	2c 81       	ldd	r18, Y+4	; 0x04
-	rxObj->byte[1] = buff[3];
+	rxObj->MCP2517_byte[1] = buff[3];
  4d4:	21 83       	std	Z+1, r18	; 0x01
  4d6:	8d 81       	ldd	r24, Y+5	; 0x05
-	rxObj->byte[2] = buff[4];
+	rxObj->MCP2517_byte[2] = buff[4];
  4d8:	82 83       	std	Z+2, r24	; 0x02
  4da:	8e 81       	ldd	r24, Y+6	; 0x06
-	rxObj->byte[3] = buff[5];
+	rxObj->MCP2517_byte[3] = buff[5];
  4dc:	83 83       	std	Z+3, r24	; 0x03
  4de:	8f 81       	ldd	r24, Y+7	; 0x07
 	
-	rxObj->byte[4] = buff[6];
+	rxObj->MCP2517_byte[4] = buff[6];
  4e0:	84 83       	std	Z+4, r24	; 0x04
  4e2:	88 85       	ldd	r24, Y+8	; 0x08
-	rxObj->byte[5] = buff[7];
+	rxObj->MCP2517_byte[5] = buff[7];
  4e4:	85 83       	std	Z+5, r24	; 0x05
  4e6:	89 85       	ldd	r24, Y+9	; 0x09
-	rxObj->byte[6] = buff[8];
+	rxObj->MCP2517_byte[6] = buff[8];
  4e8:	86 83       	std	Z+6, r24	; 0x06
  4ea:	8a 85       	ldd	r24, Y+10	; 0x0a
-	rxObj->byte[7] = buff[9];
+	rxObj->MCP2517_byte[7] = buff[9];
  4ec:	87 83       	std	Z+7, r24	; 0x07
  4ee:	83 2f       	mov	r24, r19
 	
 	// Get message ID
-	*receiveID = (uint32_t) (rxObj->bF.id.SID);
+	*receiveID = (uint32_t) (rxObj->MCP2517_bF.MCP2517_id.MCP2517_SID);
  4f0:	92 2f       	mov	r25, r18
  4f2:	97 70       	andi	r25, 0x07	; 7
  4f4:	a0 e0       	ldi	r26, 0x00	; 0
@@ -1042,14 +1042,14 @@ void MCP2517_readMsgReceive(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
  502:	f8 01       	movw	r30, r16
 	
 	// Get the number of data bytes (size of payload)
-	*numDataBytes = (uint8_t) (rxObj->byte[4] & 0xF);
+	*numDataBytes = (uint8_t) (rxObj->MCP2517_byte[4] & 0xF);
  504:	84 81       	ldd	r24, Z+4	; 0x04
  506:	8f 70       	andi	r24, 0x0F	; 15
  508:	f4 01       	movw	r30, r8
  50a:	80 83       	st	Z, r24
  50c:	f8 01       	movw	r30, r16
 
-	rxObj->word[2] = 0;
+	rxObj->MCP2517_word[2] = 0;
  50e:	10 86       	std	Z+8, r1	; 0x08
  510:	11 86       	std	Z+9, r1	; 0x09
  512:	12 86       	std	Z+10, r1	; 0x0a
@@ -1068,9 +1068,9 @@ void MCP2517_readMsgReceive(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
  526:	8d 93       	st	X+, r24
  528:	e2 17       	cp	r30, r18
 	// Get the number of data bytes (size of payload)
-	*numDataBytes = (uint8_t) (rxObj->byte[4] & 0xF);
+	*numDataBytes = (uint8_t) (rxObj->MCP2517_byte[4] & 0xF);
 
-	rxObj->word[2] = 0;
+	rxObj->MCP2517_word[2] = 0;
 	
 	for(uint8_t i = 0; i < 8; i++) {
  52a:	f3 07       	cpc	r31, r19
@@ -1105,7 +1105,7 @@ inline void MCP2517_writeReg8(const uint16_t regAddr, const uint8_t value) {
 	
 	// Increment FIFO buffer - set UNIC bit - Update channel
 	const uint8_t d = 1 << 0;
-	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (RX_FIFO * MCP2517_C1FIFO_OFFSET), d);
+	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_RX_FIFO * MCP2517_C1FIFO_OFFSET), d);
 }
  54a:	f8 94       	cli
  54c:	de bf       	out	0x3e, r29	; 62
@@ -1157,7 +1157,7 @@ void MCP2517_recieveMessage(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
 	MCP2517_RX_FIFO_STATUS rxFlags;
 	
 	// Check that FIFO is not empty
-	MCP2517_receiveFifoStatus(RX_FIFO, &rxFlags);
+	MCP2517_receiveFifoStatus(MCP2517_RX_FIFO, &rxFlags);
  596:	be 01       	movw	r22, r28
  598:	63 5f       	subi	r22, 0xF3	; 243
  59a:	7f 4f       	sbci	r23, 0xFF	; 255
@@ -1225,7 +1225,7 @@ void MCP2517_loadMsgTXFifo(MCP2517_TX_MSG_OBJ *txObj, uint8_t *payload, uint8_t 
  5f8:	e7 2e       	mov	r14, r23
  5fa:	f4 2e       	mov	r15, r20
 	
-	uint8_t buff[MAX_MSG_SIZE] = {0}; // Max number of transmit bytes
+	uint8_t buff[MCP2517_MAX_MSG_SIZE] = {0}; // Max number of transmit bytes
  5fc:	fe 01       	movw	r30, r28
  5fe:	31 96       	adiw	r30, 0x01	; 1
  600:	85 e1       	ldi	r24, 0x15	; 21
@@ -1332,7 +1332,7 @@ inline uint32_t wordFromBufferAtIndex (uint8_t buff[], const uint8_t index) {
 	}
 	
 	// Write instruction
-	const uint16_t regAddr = MCP2517_RAM_ADDR_START + MCP2517_readReg32(MCP2517_REG_ADDR_C1FIFOUA + (TX_FIFO * MCP2517_C1FIFO_OFFSET));
+	const uint16_t regAddr = MCP2517_RAM_ADDR_START + MCP2517_readReg32(MCP2517_REG_ADDR_C1FIFOUA + (MCP2517_TX_FIFO * MCP2517_C1FIFO_OFFSET));
  678:	9c 5f       	subi	r25, 0xFC	; 252
 	buff[0] = (uint8_t) ((MCP2517_INSTRUCTION_WRITE << 4) + ((regAddr >> 8) & 0xF));
  67a:	9f 70       	andi	r25, 0x0F	; 15
@@ -1342,42 +1342,42 @@ inline uint32_t wordFromBufferAtIndex (uint8_t buff[], const uint8_t index) {
  680:	8a 83       	std	Y+2, r24	; 0x02
 	
 	// Add TX Message Object's ID bits to buffer
-	buff[2] = txObj->byte[0];
+	buff[2] = txObj->MCP2517_byte[0];
  682:	d8 01       	movw	r26, r16
  684:	8c 91       	ld	r24, X
  686:	8b 83       	std	Y+3, r24	; 0x03
-	buff[3] = txObj->byte[1];
+	buff[3] = txObj->MCP2517_byte[1];
  688:	11 96       	adiw	r26, 0x01	; 1
  68a:	8c 91       	ld	r24, X
  68c:	11 97       	sbiw	r26, 0x01	; 1
  68e:	8c 83       	std	Y+4, r24	; 0x04
-	buff[4] = txObj->byte[2];
+	buff[4] = txObj->MCP2517_byte[2];
  690:	12 96       	adiw	r26, 0x02	; 2
  692:	8c 91       	ld	r24, X
  694:	12 97       	sbiw	r26, 0x02	; 2
  696:	8d 83       	std	Y+5, r24	; 0x05
-	buff[5] = txObj->byte[3];
+	buff[5] = txObj->MCP2517_byte[3];
  698:	13 96       	adiw	r26, 0x03	; 3
  69a:	8c 91       	ld	r24, X
  69c:	13 97       	sbiw	r26, 0x03	; 3
  69e:	8e 83       	std	Y+6, r24	; 0x06
 	// Add TX Message Object's ID Control bits to buffer
-	buff[6] = txObj->byte[4];
+	buff[6] = txObj->MCP2517_byte[4];
  6a0:	14 96       	adiw	r26, 0x04	; 4
  6a2:	8c 91       	ld	r24, X
  6a4:	14 97       	sbiw	r26, 0x04	; 4
  6a6:	8f 83       	std	Y+7, r24	; 0x07
-	buff[7] = txObj->byte[5];
+	buff[7] = txObj->MCP2517_byte[5];
  6a8:	15 96       	adiw	r26, 0x05	; 5
  6aa:	8c 91       	ld	r24, X
  6ac:	15 97       	sbiw	r26, 0x05	; 5
  6ae:	88 87       	std	Y+8, r24	; 0x08
-	buff[8] = txObj->byte[6];
+	buff[8] = txObj->MCP2517_byte[6];
  6b0:	16 96       	adiw	r26, 0x06	; 6
  6b2:	8c 91       	ld	r24, X
  6b4:	16 97       	sbiw	r26, 0x06	; 6
  6b6:	89 87       	std	Y+9, r24	; 0x09
-	buff[9] = txObj->byte[7];
+	buff[9] = txObj->MCP2517_byte[7];
  6b8:	17 96       	adiw	r26, 0x07	; 7
  6ba:	8c 91       	ld	r24, X
  6bc:	8a 87       	std	Y+10, r24	; 0x0a
@@ -1399,9 +1399,9 @@ inline uint32_t wordFromBufferAtIndex (uint8_t buff[], const uint8_t index) {
 		buff[i + 10] = payload[i];
  6d6:	8d 91       	ld	r24, X+
  6d8:	81 93       	st	Z+, r24
-	buff[7] = txObj->byte[5];
-	buff[8] = txObj->byte[6];
-	buff[9] = txObj->byte[7];
+	buff[7] = txObj->MCP2517_byte[5];
+	buff[8] = txObj->MCP2517_byte[6];
+	buff[9] = txObj->MCP2517_byte[7];
 	
 	// Loop through and add the payload data bytes to the buffer
 	for (i = 0; i < numDataBytes; i++) {
@@ -1450,7 +1450,7 @@ inline void MCP2517_writeReg8(const uint16_t regAddr, const uint8_t value) {
 	
 	// Increment FIFO and send message
 	const uint8_t d = (1 << 0) | (1 << 1); // Set UINC, TXREQ bit
-	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (TX_FIFO * MCP2517_C1FIFO_OFFSET) + 1, d);
+	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_TX_FIFO * MCP2517_C1FIFO_OFFSET) + 1, d);
 }
  706:	0f b6       	in	r0, 0x3f	; 63
  708:	f8 94       	cli
@@ -1510,18 +1510,18 @@ uint8_t MCP2517_transmitMessage(uint32_t canMessageID, uint8_t numDataBytes, uin
 	MCP2517_TX_MSG_OBJ txObj;
 	
 	// Set ID and CTRL bits to 0
-	txObj.word[0] = 0;
+	txObj.MCP2517_word[0] = 0;
  756:	19 82       	std	Y+1, r1	; 0x01
  758:	1a 82       	std	Y+2, r1	; 0x02
  75a:	1b 82       	std	Y+3, r1	; 0x03
  75c:	1c 82       	std	Y+4, r1	; 0x04
-	txObj.word[1] = 0;
+	txObj.MCP2517_word[1] = 0;
  75e:	1d 82       	std	Y+5, r1	; 0x05
  760:	1e 82       	std	Y+6, r1	; 0x06
  762:	1f 82       	std	Y+7, r1	; 0x07
  764:	18 86       	std	Y+8, r1	; 0x08
 	// Configure ID bits
-	txObj.bF.id.SID = canMessageID >> 18; // Base ID
+	txObj.MCP2517_bF.MCP2517_id.MCP2517_SID = canMessageID >> 18; // Base ID
  766:	4b 01       	movw	r8, r22
  768:	5c 01       	movw	r10, r24
  76a:	07 2e       	mov	r0, r23
@@ -1534,7 +1534,7 @@ uint8_t MCP2517_transmitMessage(uint32_t canMessageID, uint8_t numDataBytes, uin
  778:	d1 f7       	brne	.-12     	; 0x76e <MCP2517_transmitMessage+0x4a>
  77a:	70 2d       	mov	r23, r0
  77c:	89 82       	std	Y+1, r8	; 0x01
-	txObj.bF.id.EID = canMessageID; // Extended ID
+	txObj.MCP2517_bF.MCP2517_id.MCP2517_EID = canMessageID; // Extended ID
  77e:	26 2f       	mov	r18, r22
  780:	22 0f       	add	r18, r18
  782:	22 0f       	add	r18, r18
@@ -1569,11 +1569,11 @@ uint8_t MCP2517_transmitMessage(uint32_t canMessageID, uint8_t numDataBytes, uin
  7bc:	89 2b       	or	r24, r25
  7be:	8c 83       	std	Y+4, r24	; 0x04
 	// Configure CTRL bits
-	txObj.bF.ctrl.FDF = 0; // CAN 2.B frame
-	txObj.bF.ctrl.BRS = 1; // Switch data bit rate
-	txObj.bF.ctrl.IDE = 1; // Extended format frame
-	txObj.bF.ctrl.RTR = 0; // Not a remote frame request
-	txObj.bF.ctrl.DLC = numDataBytes; // Data length code
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_FDF = 0; // CAN 2.B frame
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_BRS = 1; // Switch data bit rate
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_IDE = 1; // Extended format frame
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_RTR = 0; // Not a remote frame request
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_DLC = numDataBytes; // Data length code
  7c0:	84 2f       	mov	r24, r20
  7c2:	8f 70       	andi	r24, 0x0F	; 15
  7c4:	80 65       	ori	r24, 0x50	; 80
@@ -1582,7 +1582,7 @@ uint8_t MCP2517_transmitMessage(uint32_t canMessageID, uint8_t numDataBytes, uin
 	// Check that FIFO is not full
 	MCP2517_TX_FIFO_STATUS txFlags;
 
-	MCP2517_transmitFifoStatus(TX_FIFO, &txFlags);
+	MCP2517_transmitFifoStatus(MCP2517_TX_FIFO, &txFlags);
  7c8:	be 01       	movw	r22, r28
  7ca:	63 5f       	subi	r22, 0xF3	; 243
  7cc:	7f 4f       	sbci	r23, 0xFF	; 255

@@ -193,17 +193,17 @@ void MCP2517_init() {
 	
 	// FIFO 1: Transmit FIFO; 5 messages, 64 byte maximum payload, low priority
 	uint8_t d = 0xEF; // FiFo Size: 7, Pay Load Size: 64 bytes
-	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (TX_FIFO * MCP2517_C1FIFO_OFFSET) + 3, d);
+	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_TX_FIFO * MCP2517_C1FIFO_OFFSET) + 3, d);
 	d = 1 << 7; // FIFO is a TX FIFO
-	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (TX_FIFO * MCP2517_C1FIFO_OFFSET), d);
+	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_TX_FIFO * MCP2517_C1FIFO_OFFSET), d);
 	d = 0x03; // Unlimited retransmission attempts
 	d <<= 5;
 	d |= 0x00; // Lowest message priority
-	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (TX_FIFO * MCP2517_C1FIFO_OFFSET) + 2, d);
+	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_TX_FIFO * MCP2517_C1FIFO_OFFSET) + 2, d);
 	
 	// FIFO 2: Receive FIFO
 	d = 0b00000011; // Payload size: 8, FiFo size: 4
-	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (RX_FIFO * MCP2517_C1FIFO_OFFSET) + 3, d);
+	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_RX_FIFO * MCP2517_C1FIFO_OFFSET) + 3, d);
 	// Enable interrupt for FIFO
 	//d = 1; // FIFO not Empty
 	//MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (SHUTDOWN_RX_FIFO * MCP2517_C1FIFO_OFFSET), d);
@@ -308,7 +308,7 @@ void MCP2517_recieveMessage(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
 	MCP2517_RX_FIFO_STATUS rxFlags;
 	
 	// Check that FIFO is not empty
-	MCP2517_receiveFifoStatus(RX_FIFO, &rxFlags);
+	MCP2517_receiveFifoStatus(MCP2517_RX_FIFO, &rxFlags);
 	
 	if (rxFlags & MCP2517_RX_FIFO_NOT_EMPTY_STATUS) {
 		
@@ -319,10 +319,10 @@ void MCP2517_recieveMessage(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
 
 void MCP2517_readMsgReceive(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t *data, MCP2517_RX_MSG_OBJ *rxObj) {
 	
-	uint8_t buff[MAX_MSG_SIZE] = {0}; // Max size of transmit message
+	uint8_t buff[MCP2517_MAX_MSG_SIZE] = {0}; // Max size of transmit message
 	
 	// Write instruction
-	const uint16_t regAddr = MCP2517_RAM_ADDR_START + MCP2517_readReg32(MCP2517_REG_ADDR_C1FIFOUA + (RX_FIFO * MCP2517_C1FIFO_OFFSET));
+	const uint16_t regAddr = MCP2517_RAM_ADDR_START + MCP2517_readReg32(MCP2517_REG_ADDR_C1FIFOUA + (MCP2517_RX_FIFO * MCP2517_C1FIFO_OFFSET));
 	buff[0] = (uint8_t) ((MCP2517_INSTRUCTION_READ << 4) + ((regAddr >> 8) & 0xF));
 	buff[1] = (uint8_t) (regAddr & 0xFF);
 	
@@ -332,26 +332,26 @@ void MCP2517_readMsgReceive(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
 	MCP2517_deassertCS();
 	
 	// Get frame ID and Control bits
-	rxObj->word[0] = 0;
-	rxObj->word[1] = 0;
+	rxObj->MCP2517_word[0] = 0;
+	rxObj->MCP2517_word[1] = 0;
 	
-	rxObj->byte[0] = buff[2];
-	rxObj->byte[1] = buff[3];
-	rxObj->byte[2] = buff[4];
-	rxObj->byte[3] = buff[5];
+	rxObj->MCP2517_byte[0] = buff[2];
+	rxObj->MCP2517_byte[1] = buff[3];
+	rxObj->MCP2517_byte[2] = buff[4];
+	rxObj->MCP2517_byte[3] = buff[5];
 	
-	rxObj->byte[4] = buff[6];
-	rxObj->byte[5] = buff[7];
-	rxObj->byte[6] = buff[8];
-	rxObj->byte[7] = buff[9];
+	rxObj->MCP2517_byte[4] = buff[6];
+	rxObj->MCP2517_byte[5] = buff[7];
+	rxObj->MCP2517_byte[6] = buff[8];
+	rxObj->MCP2517_byte[7] = buff[9];
 	
 	// Get message ID
-	*receiveID = (uint32_t) (rxObj->bF.id.SID);
+	*receiveID = (uint32_t) (rxObj->MCP2517_bF.MCP2517_id.MCP2517_SID);
 	
 	// Get the number of data bytes (size of payload)
-	*numDataBytes = (uint8_t) (rxObj->byte[4] & 0xF);
+	*numDataBytes = (uint8_t) (rxObj->MCP2517_byte[4] & 0xF);
 
-	rxObj->word[2] = 0;
+	rxObj->MCP2517_word[2] = 0;
 	
 	for(uint8_t i = 0; i < 8; i++) {
 		data[i] = buff[i + 10];
@@ -359,7 +359,7 @@ void MCP2517_readMsgReceive(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
 	
 	// Increment FIFO buffer - set UNIC bit - Update channel
 	const uint8_t d = 1 << 0;
-	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (RX_FIFO * MCP2517_C1FIFO_OFFSET), d);
+	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_RX_FIFO * MCP2517_C1FIFO_OFFSET), d);
 }
 
 // *****************************************************************************
@@ -377,22 +377,22 @@ uint8_t MCP2517_transmitMessage(uint32_t canMessageID, uint8_t numDataBytes, uin
 	MCP2517_TX_MSG_OBJ txObj;
 	
 	// Set ID and CTRL bits to 0
-	txObj.word[0] = 0;
-	txObj.word[1] = 0;
+	txObj.MCP2517_word[0] = 0;
+	txObj.MCP2517_word[1] = 0;
 	// Configure ID bits
-	txObj.bF.id.SID = canMessageID >> 18; // Base ID
-	txObj.bF.id.EID = canMessageID; // Extended ID
+	txObj.MCP2517_bF.MCP2517_id.MCP2517_SID = canMessageID >> 18; // Base ID
+	txObj.MCP2517_bF.MCP2517_id.MCP2517_EID = canMessageID; // Extended ID
 	// Configure CTRL bits
-	txObj.bF.ctrl.FDF = 0; // CAN 2.B frame
-	txObj.bF.ctrl.BRS = 1; // Switch data bit rate
-	txObj.bF.ctrl.IDE = 1; // Extended format frame
-	txObj.bF.ctrl.RTR = 0; // Not a remote frame request
-	txObj.bF.ctrl.DLC = numDataBytes; // Data length code
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_FDF = 0; // CAN 2.B frame
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_BRS = 1; // Switch data bit rate
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_IDE = 1; // Extended format frame
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_RTR = 0; // Not a remote frame request
+	txObj.MCP2517_bF.MCP2517_ctrl.MCP2517_DLC = numDataBytes; // Data length code
 
 	// Check that FIFO is not full
 	MCP2517_TX_FIFO_STATUS txFlags;
 
-	MCP2517_transmitFifoStatus(TX_FIFO, &txFlags);
+	MCP2517_transmitFifoStatus(MCP2517_TX_FIFO, &txFlags);
 	
 	// If not full proceed to append FIFO to buffer and transmit
 	if (txFlags & MCP2517_TX_FIFO_NOT_FULL_STATUS) {
@@ -406,7 +406,7 @@ uint8_t MCP2517_transmitMessage(uint32_t canMessageID, uint8_t numDataBytes, uin
 
 void MCP2517_loadMsgTXFifo(MCP2517_TX_MSG_OBJ *txObj, uint8_t *payload, uint8_t numDataBytes) {
 	
-	uint8_t buff[MAX_MSG_SIZE] = {0}; // Max number of transmit bytes
+	uint8_t buff[MCP2517_MAX_MSG_SIZE] = {0}; // Max number of transmit bytes
 	
 	// Write only multiples of 4 to RAM
 	uint8_t i;
@@ -423,20 +423,20 @@ void MCP2517_loadMsgTXFifo(MCP2517_TX_MSG_OBJ *txObj, uint8_t *payload, uint8_t 
 	}
 	
 	// Write instruction
-	const uint16_t regAddr = MCP2517_RAM_ADDR_START + MCP2517_readReg32(MCP2517_REG_ADDR_C1FIFOUA + (TX_FIFO * MCP2517_C1FIFO_OFFSET));
+	const uint16_t regAddr = MCP2517_RAM_ADDR_START + MCP2517_readReg32(MCP2517_REG_ADDR_C1FIFOUA + (MCP2517_TX_FIFO * MCP2517_C1FIFO_OFFSET));
 	buff[0] = (uint8_t) ((MCP2517_INSTRUCTION_WRITE << 4) + ((regAddr >> 8) & 0xF));
 	buff[1] = (uint8_t) (regAddr & 0xFF);
 	
 	// Add TX Message Object's ID bits to buffer
-	buff[2] = txObj->byte[0];
-	buff[3] = txObj->byte[1];
-	buff[4] = txObj->byte[2];
-	buff[5] = txObj->byte[3];
+	buff[2] = txObj->MCP2517_byte[0];
+	buff[3] = txObj->MCP2517_byte[1];
+	buff[4] = txObj->MCP2517_byte[2];
+	buff[5] = txObj->MCP2517_byte[3];
 	// Add TX Message Object's ID Control bits to buffer
-	buff[6] = txObj->byte[4];
-	buff[7] = txObj->byte[5];
-	buff[8] = txObj->byte[6];
-	buff[9] = txObj->byte[7];
+	buff[6] = txObj->MCP2517_byte[4];
+	buff[7] = txObj->MCP2517_byte[5];
+	buff[8] = txObj->MCP2517_byte[6];
+	buff[9] = txObj->MCP2517_byte[7];
 	
 	// Loop through and add the payload data bytes to the buffer
 	for (i = 0; i < numDataBytes; i++) {
@@ -450,7 +450,7 @@ void MCP2517_loadMsgTXFifo(MCP2517_TX_MSG_OBJ *txObj, uint8_t *payload, uint8_t 
 	
 	// Increment FIFO and send message
 	const uint8_t d = (1 << 0) | (1 << 1); // Set UINC, TXREQ bit
-	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (TX_FIFO * MCP2517_C1FIFO_OFFSET) + 1, d);
+	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_TX_FIFO * MCP2517_C1FIFO_OFFSET) + 1, d);
 }
 
 // RESET CHIP IF GOES TO RESTRICTED ACCESS MODE

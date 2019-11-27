@@ -12,11 +12,11 @@
 #include "MCP2517_defines.h"
 
 // Transmit Channels
-#define TX_FIFO MCP2517_FIFO_CH1
+#define MCP2517_TX_FIFO MCP2517_FIFO_CH1
 // Receive Channels
-#define RX_FIFO MCP2517_FIFO_CH2
+#define MCP2517_RX_FIFO MCP2517_FIFO_CH2
 
-#define MAX_MSG_SIZE 21
+#define MCP2517_MAX_MSG_SIZE 21
 
 // CAN IDs
 #define CAN_ID_INV	        0x0C000000 /**< CAN Bus Identifier for Inverters */
