@@ -34,6 +34,18 @@ Discarded input sections
                 0x00000000       0x70 MCP2517.o
  .text.MCP2517_testRAM
                 0x00000000       0xf4 MCP2517.o
+ .text.MCP2517_receiveFifoStatus
+                0x00000000       0x64 MCP2517.o
+ .text.MCP2517_transmitFifoStatus
+                0x00000000       0x64 MCP2517.o
+ .text.MCP2517_readMsgReceive
+                0x00000000      0x14a MCP2517.o
+ .text.MCP2517_recieveMessage
+                0x00000000       0x78 MCP2517.o
+ .text.MCP2517_loadMsgTXFifo
+                0x00000000      0x164 MCP2517.o
+ .text.MCP2517_transmitMessage
+                0x00000000       0xfc MCP2517.o
  .text          0x00000000        0x0 spi.o
  .data          0x00000000        0x0 spi.o
  .bss           0x00000000        0x0 spi.o
@@ -209,7 +221,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x880
+.text           0x00000000      0x3a4
  *(.vectors)
  .vectors       0x00000000       0x8c D:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
                 0x00000000                __vector_default
@@ -310,63 +322,45 @@ END GROUP
                 0x000000cc       0x38 adc.o
                 0x000000cc                adc_read
  .text.HV_board_init
-                0x00000104       0x1e main.o
+                0x00000104       0x20 main.o
                 0x00000104                HV_board_init
- .text.main     0x00000122       0xa4 main.o
-                0x00000122                main
+ .text.main     0x00000124       0x52 main.o
+                0x00000124                main
  .text.MCP2517_assertCS
-                0x000001c6        0x4 MCP2517.o
-                0x000001c6                MCP2517_assertCS
+                0x00000176        0x4 MCP2517.o
+                0x00000176                MCP2517_assertCS
  .text.MCP2517_deassertCS
-                0x000001ca        0x4 MCP2517.o
-                0x000001ca                MCP2517_deassertCS
+                0x0000017a        0x4 MCP2517.o
+                0x0000017a                MCP2517_deassertCS
  .text.MCP2517_reset
-                0x000001ce       0x28 MCP2517.o
-                0x000001ce                MCP2517_reset
+                0x0000017e       0x28 MCP2517.o
+                0x0000017e                MCP2517_reset
  .text.MCP2517_setMode
-                0x000001f6       0x30 MCP2517.o
-                0x000001f6                MCP2517_setMode
+                0x000001a6       0x30 MCP2517.o
+                0x000001a6                MCP2517_setMode
  .text.MCP2517_getMode
-                0x00000226       0x3a MCP2517.o
-                0x00000226                MCP2517_getMode
+                0x000001d6       0x3a MCP2517.o
+                0x000001d6                MCP2517_getMode
  .text.MCP2517_init
-                0x00000260      0x11c MCP2517.o
-                0x00000260                MCP2517_init
- .text.MCP2517_receiveFifoStatus
-                0x0000037c       0x5e MCP2517.o
-                0x0000037c                MCP2517_receiveFifoStatus
- .text.MCP2517_transmitFifoStatus
-                0x000003da       0x5e MCP2517.o
-                0x000003da                MCP2517_transmitFifoStatus
- .text.MCP2517_readMsgReceive
-                0x00000438      0x138 MCP2517.o
-                0x00000438                MCP2517_readMsgReceive
- .text.MCP2517_recieveMessage
-                0x00000570       0x62 MCP2517.o
-                0x00000570                MCP2517_recieveMessage
- .text.MCP2517_loadMsgTXFifo
-                0x000005d2      0x152 MCP2517.o
-                0x000005d2                MCP2517_loadMsgTXFifo
- .text.MCP2517_transmitMessage
-                0x00000724       0xe4 MCP2517.o
-                0x00000724                MCP2517_transmitMessage
+                0x00000210      0x11c MCP2517.o
+                0x00000210                MCP2517_init
  .text.spi_init
-                0x00000808        0xe spi.o
-                0x00000808                spi_init
+                0x0000032c        0xe spi.o
+                0x0000032c                spi_init
  .text.spi_transfer_buffer
-                0x00000816       0x2e spi.o
-                0x00000816                spi_transfer_buffer
+                0x0000033a       0x2e spi.o
+                0x0000033a                spi_transfer_buffer
  .text.uart0_init
-                0x00000844       0x28 UART.o
-                0x00000844                uart0_init
+                0x00000368       0x28 UART.o
+                0x00000368                uart0_init
  .text.uart0_transmit
-                0x0000086c       0x10 UART.o
-                0x0000086c                uart0_transmit
-                0x0000087c                . = ALIGN (0x2)
+                0x00000390       0x10 UART.o
+                0x00000390                uart0_transmit
+                0x000003a0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000087c        0x0 d:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                0x0000087c                _exit
-                0x0000087c                exit
+ .fini9         0x000003a0        0x0 d:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x000003a0                _exit
+                0x000003a0                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -385,11 +379,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000087c        0x4 d:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .fini0         0x000003a0        0x4 d:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000880                _etext = .
+                0x000003a4                _etext = .
 
-.data           0x00800100        0x0 load address 0x00000880
+.data           0x00800100        0x0 load address 0x000003a4
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -410,8 +404,8 @@ END GROUP
                 0x00800100                HV_BOARD_DATA
  *(COMMON)
                 0x00800105                PROVIDE (__bss_end, .)
-                0x00000880                __data_load_start = LOADADDR (.data)
-                0x00000880                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000003a4                __data_load_start = LOADADDR (.data)
+                0x000003a4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800105        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -502,62 +496,62 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x25c4
+.debug_info     0x00000000     0x2578
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x792 D:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .debug_info    0x00000792       0xf0 adc.o
- .debug_info    0x00000882      0x30c main.o
- .debug_info    0x00000b8e     0x17e0 MCP2517.o
- .debug_info    0x0000236e      0x159 spi.o
- .debug_info    0x000024c7       0xfd UART.o
+ .debug_info    0x00000882      0x24c main.o
+ .debug_info    0x00000ace     0x1854 MCP2517.o
+ .debug_info    0x00002322      0x159 spi.o
+ .debug_info    0x0000247b       0xfd UART.o
 
-.debug_abbrev   0x00000000      0xe2c
+.debug_abbrev   0x00000000      0xe0b
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x729 D:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .debug_abbrev  0x00000729       0xa1 adc.o
- .debug_abbrev  0x000007ca      0x180 main.o
- .debug_abbrev  0x0000094a      0x36a MCP2517.o
- .debug_abbrev  0x00000cb4       0xc6 spi.o
- .debug_abbrev  0x00000d7a       0xb2 UART.o
+ .debug_abbrev  0x000007ca      0x15f main.o
+ .debug_abbrev  0x00000929      0x36a MCP2517.o
+ .debug_abbrev  0x00000c93       0xc6 spi.o
+ .debug_abbrev  0x00000d59       0xb2 UART.o
 
-.debug_line     0x00000000      0xf8d
+.debug_line     0x00000000      0xfb1
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 D:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .debug_line    0x00000169      0x112 adc.o
- .debug_line    0x0000027b      0x1d9 main.o
- .debug_line    0x00000454      0x8c2 MCP2517.o
- .debug_line    0x00000d16      0x12e spi.o
- .debug_line    0x00000e44      0x149 UART.o
+ .debug_line    0x0000027b      0x1e5 main.o
+ .debug_line    0x00000460      0x8da MCP2517.o
+ .debug_line    0x00000d3a      0x12e spi.o
+ .debug_line    0x00000e68      0x149 UART.o
 
-.debug_frame    0x00000000      0x480
+.debug_frame    0x00000000      0x470
  *(.debug_frame)
  .debug_frame   0x00000000       0x44 adc.o
- .debug_frame   0x00000044       0x44 main.o
- .debug_frame   0x00000088      0x350 MCP2517.o
- .debug_frame   0x000003d8       0x54 spi.o
- .debug_frame   0x0000042c       0x54 UART.o
+ .debug_frame   0x00000044       0x34 main.o
+ .debug_frame   0x00000078      0x350 MCP2517.o
+ .debug_frame   0x000003c8       0x54 spi.o
+ .debug_frame   0x0000041c       0x54 UART.o
 
 .debug_str      0x00000000     0x1091
  *(.debug_str)
  .debug_str     0x00000000      0x296 D:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284p/avr51/crtatmega1284p.o
  .debug_str     0x00000296      0x194 adc.o
                                 0x1d2 (size before relaxing)
- .debug_str     0x0000042a       0xfc main.o
-                                0x294 (size before relaxing)
- .debug_str     0x00000526      0xaf9 MCP2517.o
+ .debug_str     0x0000042a       0xcd main.o
+                                0x265 (size before relaxing)
+ .debug_str     0x000004f7      0xb28 MCP2517.o
                                 0xda3 (size before relaxing)
  .debug_str     0x0000101f       0x3d spi.o
                                 0x1dc (size before relaxing)
  .debug_str     0x0000105c       0x35 UART.o
                                 0x1d1 (size before relaxing)
 
-.debug_loc      0x00000000     0x15c6
+.debug_loc      0x00000000     0x15c7
  *(.debug_loc)
  .debug_loc     0x00000000       0xaa adc.o
- .debug_loc     0x000000aa       0xb8 main.o
- .debug_loc     0x00000162     0x1351 MCP2517.o
- .debug_loc     0x000014b3       0xed spi.o
- .debug_loc     0x000015a0       0x26 UART.o
+ .debug_loc     0x000000aa       0x29 main.o
+ .debug_loc     0x000000d3     0x13e1 MCP2517.o
+ .debug_loc     0x000014b4       0xed spi.o
+ .debug_loc     0x000015a1       0x26 UART.o
 
 .debug_macinfo
  *(.debug_macinfo)

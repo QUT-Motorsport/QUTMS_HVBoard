@@ -19,6 +19,8 @@
 #include "MCP2517.h"
 #include "MCP2517_reg.h"
 
+#define BIT_VALUE(reg, pin) ((reg>>pin) & 1)
+
 uint8_t HV_BOARD_DATA[5] = {0};
 
 /*============================================================================
@@ -34,7 +36,9 @@ void HV_board_init()
 {
 	DDRD = 0b11000010; // LEDs as outputs
 	DDRB = 0b10111000; // MOSI and SCK and CAN_CS as output, SS output
-
+	// Set IMD Status pin as input - High = no fault, Low = failure
+	DDRA = 0b00000000;
+	
 	CAN_CS_PORT |= (1<<CAN_CS); // CS high to turn off
 	
 	adc_init();
@@ -60,18 +64,33 @@ int main(void)
 	
     while(1) 
     {
-		MCP2517_recieveMessage(&receiveID, &numDataBytes, data);
-		if(receiveID == CAN_ID_PDM >> 18) {
-			LED_A_ON;		
-			MCP2517_transmitMessage(CAN_ID_PDM, 5, HV_BOARD_DATA);
-			_delay_ms(50);
+		//MCP2517_recieveMessage(&receiveID, &numDataBytes, data);
+		//if(receiveID == CAN_ID_PDM >> 18) {
+			//LED_A_ON;		
+			//MCP2517_transmitMessage(CAN_ID_PDM, 5, HV_BOARD_DATA);
+			//_delay_ms(100);
+			//LED_A_OFF;
+		//}
+		//LED_B_ON;
+		
+		// Check whether the IMD Status pin is high or low (only after it's been plugged in/ running for min of 2s)
+		if(BIT_VALUE(IMD_REG, IMD_STATUS) != 0) {
+			LED_B_ON;
+		} else {
+			LED_B_OFF;
+		}
+		
+		// Check the HV_SENSE_ON pin, High - TSAL is off, Low - TSAL is on
+		if(BIT_VALUE(HV_SENSE_REG, HV_SENSE_STATUS) == 0) {
+			LED_A_ON;
+			} else {
 			LED_A_OFF;
 		}
 		
 		uint16_t lemMeasurement = adc_read(0x01);
 		HV_BOARD_DATA[0] = lemMeasurement >> 8;
 		HV_BOARD_DATA[1] = lemMeasurement;
-			
+		LED_A_TOGGLE;
 		_delay_ms(200);
     }
 }

@@ -311,9 +311,11 @@ void MCP2517_recieveMessage(uint32_t *receiveID, uint8_t *numDataBytes, uint8_t 
 	MCP2517_receiveFifoStatus(MCP2517_RX_FIFO, &rxFlags);
 	
 	if (rxFlags & MCP2517_RX_FIFO_NOT_EMPTY_STATUS) {
-		
+		///LED_B_ON;
 		// Read message
 		MCP2517_readMsgReceive(receiveID, numDataBytes, data, &rxObj);
+		_delay_ms(100);
+		//LED_B_OFF;
 	}
 }
 
@@ -396,8 +398,10 @@ uint8_t MCP2517_transmitMessage(uint32_t canMessageID, uint8_t numDataBytes, uin
 	
 	// If not full proceed to append FIFO to buffer and transmit
 	if (txFlags & MCP2517_TX_FIFO_NOT_FULL_STATUS) {
-		
+		//LED_A_ON;
 		MCP2517_loadMsgTXFifo(&txObj, messageData, numDataBytes);
+		_delay_ms(100);
+		//LED_A_OFF;
 	}
 	
 	return MCP2517_NO_ERROR;
