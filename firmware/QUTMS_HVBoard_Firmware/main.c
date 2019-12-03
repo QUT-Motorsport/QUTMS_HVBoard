@@ -21,7 +21,7 @@
 
 #define BIT_VALUE(reg, pin) ((reg>>pin) & 1)
 
-uint8_t HV_BOARD_DATA[5] = {0};
+uint8_t HV_BOARD_DATA[3] = {0};
 
 /*============================================================================
 Function:   HV_board_init()
@@ -39,7 +39,7 @@ void HV_board_init()
 	// Set IMD Status pin as input - High = no fault, Low = failure
 	DDRA = 0b00000000;
 	
-	CAN_CS_PORT |= (1<<CAN_CS); // CS high to turn off
+	CAN_CS_PORT |= (1 << CAN_CS); // CS high to turn off
 	
 	adc_init();
 	uart0_init(9600);
@@ -51,12 +51,6 @@ void HV_board_init()
 int main(void)
 {
     HV_board_init();
-	
-	HV_BOARD_DATA[0] = 0x00;
-	HV_BOARD_DATA[1] = 0x01;
-	HV_BOARD_DATA[2] = 0x02;
-	HV_BOARD_DATA[3] = 0x03;
-	HV_BOARD_DATA[4] = 0x04;
 	
 	uint8_t data[8] = {0};
 	CAN_RECEIVE_ADDRESS receiveID;
