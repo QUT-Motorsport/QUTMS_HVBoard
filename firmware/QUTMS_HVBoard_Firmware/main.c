@@ -69,8 +69,7 @@ int main(void)
 		MCP2517_recieveMessage(&receiveID, &numDataBytes, data);
 		if(receiveID == CAN_RECEIVE_ID_HV >> 18) {
 			//LED_A_ON;		
-			MCP2517_transmitMessage(CAN_SEND_ID_HV, 5, HV_BOARD_DATA);
-			_delay_ms(100);
+			MCP2517_transmitMessage(CAN_SEND_ID_HV, 3, HV_BOARD_DATA); // Respond to CC Heartbeat
 			//LED_A_OFF;
 		}
 		receiveID = 0;
@@ -99,6 +98,6 @@ int main(void)
 		HV_BOARD_DATA[1] = lemMeasurement >> 8;
 		HV_BOARD_DATA[2] = lemMeasurement;
 		//LED_A_TOGGLE;
-		_delay_ms(200);
+		_delay_ms(100);
     }
 }
