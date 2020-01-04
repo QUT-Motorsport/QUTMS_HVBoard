@@ -1,10 +1,8 @@
-/*****************************************************************************
-* @file    firmware/QUTMS_SteeringWheel_Firmware/input.h
-* @author  Zoe Goodward
-* @version V1.0.0
-* @date    2/08/2019 1:20:22 PM
-* @brief   This file defines the outputs and inputs of the pins of the MCU
-*****************************************************************************/
+/**
+ * @file input.h
+ * @author Zoe Goodward
+ * @brief This file defines the outputs and inputs of the pins of the MCU test 
+ * */
 
 #ifndef INPUT_H_
 #define INPUT_H_

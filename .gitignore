@@ -1,5 +1,6 @@
 # VS Code
 .vs
+firmware/QUTMS_HVBoard_Firmware/.vscode/*
 
 # Various Altium files
 *.PrjPCBStructure

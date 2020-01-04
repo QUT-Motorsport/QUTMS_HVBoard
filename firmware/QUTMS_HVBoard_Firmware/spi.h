@@ -1,11 +1,8 @@
-/*****************************************************************************
-* @file    firmware/QUTMS_HVBoard_Firmware/spi.h
-* @author  Zoe Goodward
-* @version V1.0.0
-* @date    2/08/2019 1:27:31 PM
-* @brief   This file declares the variables and functions that are used for
-*          SPI
-*****************************************************************************/
+/**
+ * @file    spi.h
+ * @author Zoe Goodward
+ * @brief   This file declares the variables and functions that are used for SPI
+ * */
 
 #ifndef SPI_H_
 #define SPI_H_

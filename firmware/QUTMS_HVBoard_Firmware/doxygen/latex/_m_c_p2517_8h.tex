@@ -1,0 +1,310 @@
+\hypertarget{_m_c_p2517_8h}{}\doxysection{M\+C\+P2517.\+h File Reference}
+\label{_m_c_p2517_8h}\index{MCP2517.h@{MCP2517.h}}
+
+
+This file..  
+
+
+{\ttfamily \#include \char`\"{}M\+C\+P2517\+\_\+defines.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_m_c_p2517_8h_a39ff220a498e07dd2bcc25c0d92176bb}{M\+C\+P2517\+\_\+\+T\+X\+\_\+\+F\+I\+FO}}~\mbox{\hyperlink{_m_c_p2517__defines_8h_afcb9d132da58bf26b620714b1b825e01aebecf296f1736334444f6041f07f5fd8}{M\+C\+P2517\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H1}}
+\item 
+\#define \mbox{\hyperlink{_m_c_p2517_8h_ae7c56ffeec5c7852d283424cad9dd5ca}{M\+C\+P2517\+\_\+\+R\+X\+\_\+\+F\+I\+FO}}~\mbox{\hyperlink{_m_c_p2517__defines_8h_afcb9d132da58bf26b620714b1b825e01aa64a3092d45a00366fb38fd6ff58da5b}{M\+C\+P2517\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H2}}
+\item 
+\#define \mbox{\hyperlink{_m_c_p2517_8h_a7bcb7b7c30b2bdf09340d6e85dbaa7d6}{M\+C\+P2517\+\_\+\+M\+A\+X\+\_\+\+M\+S\+G\+\_\+\+S\+I\+ZE}}~21
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} \{ \newline
+\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a275b4c40639dd8528831e4d54e932189}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+I\+NV}} = 0x0\+C000000, 
+\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a4e1922038a6ec4afb19c71c375d4f8bc}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+A\+MU}} = 0x0\+A000000, 
+\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a681a9a02dd605f16ef82f01f95026b78}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+P\+DM}} = 0x09000000, 
+\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a826a6df4bfc88dc7fea1b9ef80ad8200}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+S\+H\+U\+T\+D\+O\+WN}} = 0x08800000, 
+\newline
+\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896aaea4a25d0190e63dbab6e4cbce0f42c5}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+W\+H\+E\+EL}} = 0x08400000, 
+\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a91eea00d60d180a607acee4c4adde4cc}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+B\+MS}} = 0x08200000, 
+\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a19704f2a7bc07b9134d276e1a1a98aa6}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+HV}} = 0x08100000
+ \}
+\item 
+enum \mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+A\+D\+D\+R\+E\+SS}} \{ \newline
+\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a97a7c9424fad380bea63bfd22eab56a6}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+I\+NV}} = 0x04000000, 
+\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55ac5b4faffcdd39122b4970344fa30406f}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+A\+MU}} = 0x02000000, 
+\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a2993dc16351f55ba88543c73bb1f2c39}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+P\+DM}} = 0x01000000, 
+\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55aec7a26eb6317e66016532be449e52030}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+S\+H\+U\+T\+D\+O\+WN}} = 0x0800000, 
+\newline
+\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55afbf59ca3ff4367a8dad1662f3ca8ca68}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+W\+H\+E\+EL}} = 0x0400000, 
+\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a09f52c2ee2fab5dd94710ae3a3fc412b}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+B\+MS}} = 0x0200000, 
+\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a0b5f83203719a40fa8696bee844f6465}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+HV}} = 0x0100000
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_aaf22caee335155162b3debab8c9f7fa1}{M\+C\+P2517\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_a6ce360d2419dd429fb9213ed2a952e19}{enter\+Word\+In\+Buffer\+At\+Index}} (const uint32\+\_\+t value, uint8\+\_\+t buff\mbox{[}$\,$\mbox{]}, const uint8\+\_\+t index)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_m_c_p2517_8h_a7ddec03593766064dc5ddd2612fd4ffd}{word\+From\+Buffer\+At\+Index}} (uint8\+\_\+t buff\mbox{[}$\,$\mbox{]}, const uint8\+\_\+t index)
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_a494bb1ecd2db11d5437dc414f6c5bbbc}{M\+C\+P2517\+\_\+write\+Reg8}} (const uint16\+\_\+t reg\+Addr, const uint8\+\_\+t value)
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_a84651ed667626236e19d789207f8ac59}{M\+C\+P2517\+\_\+write\+Reg32}} (const uint16\+\_\+t reg\+Addr, const uint32\+\_\+t value)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_m_c_p2517_8h_ab8881a11edf4195504af59857330818a}{M\+C\+P2517\+\_\+read\+Reg8}} (const uint16\+\_\+t reg\+Addr)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_m_c_p2517_8h_abede1aa660d5d38830433b7760a4547e}{M\+C\+P2517\+\_\+read\+Reg32}} (const uint16\+\_\+t reg\+Addr)
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_a832c4fb4b8e0103fa13cf58ffc0bdbd1}{M\+C\+P2517\+\_\+assert\+CS}} ()
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_a320dd5db3e03bbc2a781a41a3d17f8ec}{M\+C\+P2517\+\_\+deassert\+CS}} ()
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_a8edc090c194058c4d6dc3baeca8a82bc}{M\+C\+P2517\+\_\+reset}} ()
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_a33ef38b9789aea0ac742c3c3e5a8fa91}{M\+C\+P2517\+\_\+set\+Mode}} (\mbox{\hyperlink{_m_c_p2517__defines_8h_aae8af2d6118d3587fdc55089424260e2}{M\+C\+P2517\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE}} op\+Mode)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_m_c_p2517_8h_a885736f875a71d717393ccad8918c32b}{M\+C\+P2517\+\_\+get\+Mode}} ()
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_ac58b011d7d4285af02de62a6c750b384}{M\+C\+P2517\+\_\+test\+R\+AM}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_m_c_p2517_8h_ab416dda4179f992f979d900676a29eb4}{M\+C\+P2517\+\_\+receive\+Fifo\+Status}} (\mbox{\hyperlink{_m_c_p2517__defines_8h_afcb9d132da58bf26b620714b1b825e01}{M\+C\+P2517\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H\+A\+N\+N\+EL}} channel, \mbox{\hyperlink{_m_c_p2517__defines_8h_a08e23b2606a076c5fa2a98d582c72845}{M\+C\+P2517\+\_\+\+R\+X\+\_\+\+F\+I\+F\+O\+\_\+\+S\+T\+A\+T\+US}} $\ast$flags)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_m_c_p2517_8h_a2cb9e995d550850500b5db5f7e43381e}{M\+C\+P2517\+\_\+transmit\+Fifo\+Status}} (\mbox{\hyperlink{_m_c_p2517__defines_8h_afcb9d132da58bf26b620714b1b825e01}{M\+C\+P2517\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H\+A\+N\+N\+EL}} channel, \mbox{\hyperlink{_m_c_p2517__defines_8h_a574ba05fbd07d11dc523ed5e318f8662}{M\+C\+P2517\+\_\+\+T\+X\+\_\+\+F\+I\+F\+O\+\_\+\+S\+T\+A\+T\+US}} $\ast$flags)
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_ac4b246f434e43f50d1221fdb91e6f7c1}{M\+C\+P2517\+\_\+recieve\+Message}} (\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} $\ast$receive\+ID, uint8\+\_\+t $\ast$num\+Data\+Bytes, uint8\+\_\+t $\ast$data)
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_a923a79b104c6e86f71bbce3cb22f6a50}{M\+C\+P2517\+\_\+read\+Msg\+Receive}} (\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} $\ast$receive\+ID, uint8\+\_\+t $\ast$num\+Data\+Bytes, uint8\+\_\+t $\ast$data, \mbox{\hyperlink{_m_c_p2517__defines_8h_a5ccdc7c23ddf5a3887057ea1a2e88890}{M\+C\+P2517\+\_\+\+R\+X\+\_\+\+M\+S\+G\+\_\+\+O\+BJ}} $\ast$rx\+Obj)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_m_c_p2517_8h_afb015874124e15ccb43775bf1e3765ce}{M\+C\+P2517\+\_\+transmit\+Message}} (\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+A\+D\+D\+R\+E\+SS}} can\+Message\+ID, uint8\+\_\+t num\+Data\+Bytes, uint8\+\_\+t $\ast$message\+Data)
+\item 
+void \mbox{\hyperlink{_m_c_p2517_8h_af625112001b94c551e01c5f79a2a983c}{M\+C\+P2517\+\_\+load\+Msg\+T\+X\+Fifo}} (\mbox{\hyperlink{_m_c_p2517__defines_8h_aafd36d70e86c0bbabb17a84e3a35c17b}{M\+C\+P2517\+\_\+\+T\+X\+\_\+\+M\+S\+G\+\_\+\+O\+BJ}} $\ast$tx\+Obj, uint8\+\_\+t $\ast$payload, uint8\+\_\+t num\+Data\+Bytes)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file.. 
+
+\begin{DoxyAuthor}{Author}
+Zoe Goodward 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21/11/2019 5\+:50\+:22 PM 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_m_c_p2517_8h_a7bcb7b7c30b2bdf09340d6e85dbaa7d6}\label{_m_c_p2517_8h_a7bcb7b7c30b2bdf09340d6e85dbaa7d6}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_MAX\_MSG\_SIZE@{MCP2517\_MAX\_MSG\_SIZE}}
+\index{MCP2517\_MAX\_MSG\_SIZE@{MCP2517\_MAX\_MSG\_SIZE}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_MAX\_MSG\_SIZE}{MCP2517\_MAX\_MSG\_SIZE}}
+{\footnotesize\ttfamily \#define M\+C\+P2517\+\_\+\+M\+A\+X\+\_\+\+M\+S\+G\+\_\+\+S\+I\+ZE~21}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_ae7c56ffeec5c7852d283424cad9dd5ca}\label{_m_c_p2517_8h_ae7c56ffeec5c7852d283424cad9dd5ca}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_RX\_FIFO@{MCP2517\_RX\_FIFO}}
+\index{MCP2517\_RX\_FIFO@{MCP2517\_RX\_FIFO}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_RX\_FIFO}{MCP2517\_RX\_FIFO}}
+{\footnotesize\ttfamily \#define M\+C\+P2517\+\_\+\+R\+X\+\_\+\+F\+I\+FO~\mbox{\hyperlink{_m_c_p2517__defines_8h_afcb9d132da58bf26b620714b1b825e01aa64a3092d45a00366fb38fd6ff58da5b}{M\+C\+P2517\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H2}}}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a39ff220a498e07dd2bcc25c0d92176bb}\label{_m_c_p2517_8h_a39ff220a498e07dd2bcc25c0d92176bb}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_TX\_FIFO@{MCP2517\_TX\_FIFO}}
+\index{MCP2517\_TX\_FIFO@{MCP2517\_TX\_FIFO}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_TX\_FIFO}{MCP2517\_TX\_FIFO}}
+{\footnotesize\ttfamily \#define M\+C\+P2517\+\_\+\+T\+X\+\_\+\+F\+I\+FO~\mbox{\hyperlink{_m_c_p2517__defines_8h_afcb9d132da58bf26b620714b1b825e01aebecf296f1736334444f6041f07f5fd8}{M\+C\+P2517\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H1}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896}\label{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896}} 
+\index{MCP2517.h@{MCP2517.h}!CAN\_RECEIVE\_ADDRESS@{CAN\_RECEIVE\_ADDRESS}}
+\index{CAN\_RECEIVE\_ADDRESS@{CAN\_RECEIVE\_ADDRESS}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{CAN\_RECEIVE\_ADDRESS}{CAN\_RECEIVE\_ADDRESS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_RECEIVE\_ID\_INV@{CAN\_RECEIVE\_ID\_INV}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_RECEIVE\_ID\_INV@{CAN\_RECEIVE\_ID\_INV}}}\mbox{\Hypertarget{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a275b4c40639dd8528831e4d54e932189}\label{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a275b4c40639dd8528831e4d54e932189}} 
+C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+I\+NV&C\+AN Bus Identifier for Inverters 1100000000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_RECEIVE\_ID\_AMU@{CAN\_RECEIVE\_ID\_AMU}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_RECEIVE\_ID\_AMU@{CAN\_RECEIVE\_ID\_AMU}}}\mbox{\Hypertarget{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a4e1922038a6ec4afb19c71c375d4f8bc}\label{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a4e1922038a6ec4afb19c71c375d4f8bc}} 
+C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+A\+MU&C\+AN Bus Identifier for A\+MU 1010000000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_RECEIVE\_ID\_PDM@{CAN\_RECEIVE\_ID\_PDM}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_RECEIVE\_ID\_PDM@{CAN\_RECEIVE\_ID\_PDM}}}\mbox{\Hypertarget{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a681a9a02dd605f16ef82f01f95026b78}\label{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a681a9a02dd605f16ef82f01f95026b78}} 
+C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+P\+DM&C\+AN Bus Identifier for P\+DM 1001000000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_RECEIVE\_ID\_SHUTDOWN@{CAN\_RECEIVE\_ID\_SHUTDOWN}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_RECEIVE\_ID\_SHUTDOWN@{CAN\_RECEIVE\_ID\_SHUTDOWN}}}\mbox{\Hypertarget{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a826a6df4bfc88dc7fea1b9ef80ad8200}\label{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a826a6df4bfc88dc7fea1b9ef80ad8200}} 
+C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+S\+H\+U\+T\+D\+O\+WN&C\+AN Bus for Shutdown 1000100000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_RECEIVE\_ID\_WHEEL@{CAN\_RECEIVE\_ID\_WHEEL}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_RECEIVE\_ID\_WHEEL@{CAN\_RECEIVE\_ID\_WHEEL}}}\mbox{\Hypertarget{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896aaea4a25d0190e63dbab6e4cbce0f42c5}\label{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896aaea4a25d0190e63dbab6e4cbce0f42c5}} 
+C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+W\+H\+E\+EL&C\+AN Bus for Steering Wheel 1000010000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_RECEIVE\_ID\_BMS@{CAN\_RECEIVE\_ID\_BMS}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_RECEIVE\_ID\_BMS@{CAN\_RECEIVE\_ID\_BMS}}}\mbox{\Hypertarget{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a91eea00d60d180a607acee4c4adde4cc}\label{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a91eea00d60d180a607acee4c4adde4cc}} 
+C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+B\+MS&C\+AN Bus for B\+MS 1000001000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_RECEIVE\_ID\_HV@{CAN\_RECEIVE\_ID\_HV}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_RECEIVE\_ID\_HV@{CAN\_RECEIVE\_ID\_HV}}}\mbox{\Hypertarget{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a19704f2a7bc07b9134d276e1a1a98aa6}\label{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896a19704f2a7bc07b9134d276e1a1a98aa6}} 
+C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+I\+D\+\_\+\+HV&C\+AN Bus for HV 1000000100000000000000000000 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55}\label{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55}} 
+\index{MCP2517.h@{MCP2517.h}!CAN\_SEND\_ADDRESS@{CAN\_SEND\_ADDRESS}}
+\index{CAN\_SEND\_ADDRESS@{CAN\_SEND\_ADDRESS}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{CAN\_SEND\_ADDRESS}{CAN\_SEND\_ADDRESS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_SEND\_ID\_INV@{CAN\_SEND\_ID\_INV}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_SEND\_ID\_INV@{CAN\_SEND\_ID\_INV}}}\mbox{\Hypertarget{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a97a7c9424fad380bea63bfd22eab56a6}\label{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a97a7c9424fad380bea63bfd22eab56a6}} 
+C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+I\+NV&C\+AN Bus Identifier for Inverters 0100000000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_SEND\_ID\_AMU@{CAN\_SEND\_ID\_AMU}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_SEND\_ID\_AMU@{CAN\_SEND\_ID\_AMU}}}\mbox{\Hypertarget{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55ac5b4faffcdd39122b4970344fa30406f}\label{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55ac5b4faffcdd39122b4970344fa30406f}} 
+C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+A\+MU&C\+AN Bus Identifier for A\+MU 0010000000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_SEND\_ID\_PDM@{CAN\_SEND\_ID\_PDM}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_SEND\_ID\_PDM@{CAN\_SEND\_ID\_PDM}}}\mbox{\Hypertarget{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a2993dc16351f55ba88543c73bb1f2c39}\label{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a2993dc16351f55ba88543c73bb1f2c39}} 
+C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+P\+DM&C\+AN Bus Identifier for P\+DM 0001000000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_SEND\_ID\_SHUTDOWN@{CAN\_SEND\_ID\_SHUTDOWN}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_SEND\_ID\_SHUTDOWN@{CAN\_SEND\_ID\_SHUTDOWN}}}\mbox{\Hypertarget{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55aec7a26eb6317e66016532be449e52030}\label{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55aec7a26eb6317e66016532be449e52030}} 
+C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+S\+H\+U\+T\+D\+O\+WN&C\+AN Bus for Shutdown 0000100000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_SEND\_ID\_WHEEL@{CAN\_SEND\_ID\_WHEEL}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_SEND\_ID\_WHEEL@{CAN\_SEND\_ID\_WHEEL}}}\mbox{\Hypertarget{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55afbf59ca3ff4367a8dad1662f3ca8ca68}\label{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55afbf59ca3ff4367a8dad1662f3ca8ca68}} 
+C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+W\+H\+E\+EL&C\+AN Bus for Steering Wheel 0000010000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_SEND\_ID\_BMS@{CAN\_SEND\_ID\_BMS}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_SEND\_ID\_BMS@{CAN\_SEND\_ID\_BMS}}}\mbox{\Hypertarget{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a09f52c2ee2fab5dd94710ae3a3fc412b}\label{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a09f52c2ee2fab5dd94710ae3a3fc412b}} 
+C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+B\+MS&C\+AN Bus for B\+MS 0000001000000000000000000000 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_SEND\_ID\_HV@{CAN\_SEND\_ID\_HV}!MCP2517.h@{MCP2517.h}}\index{MCP2517.h@{MCP2517.h}!CAN\_SEND\_ID\_HV@{CAN\_SEND\_ID\_HV}}}\mbox{\Hypertarget{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a0b5f83203719a40fa8696bee844f6465}\label{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55a0b5f83203719a40fa8696bee844f6465}} 
+C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+D\+\_\+\+HV&C\+AN Bus for HV 0000000100000000000000000000 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_m_c_p2517_8h_a6ce360d2419dd429fb9213ed2a952e19}\label{_m_c_p2517_8h_a6ce360d2419dd429fb9213ed2a952e19}} 
+\index{MCP2517.h@{MCP2517.h}!enterWordInBufferAtIndex@{enterWordInBufferAtIndex}}
+\index{enterWordInBufferAtIndex@{enterWordInBufferAtIndex}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{enterWordInBufferAtIndex()}{enterWordInBufferAtIndex()}}
+{\footnotesize\ttfamily void enter\+Word\+In\+Buffer\+At\+Index (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t}]{value,  }\item[{uint8\+\_\+t}]{buff\mbox{[}$\,$\mbox{]},  }\item[{const uint8\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a832c4fb4b8e0103fa13cf58ffc0bdbd1}\label{_m_c_p2517_8h_a832c4fb4b8e0103fa13cf58ffc0bdbd1}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_assertCS@{MCP2517\_assertCS}}
+\index{MCP2517\_assertCS@{MCP2517\_assertCS}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_assertCS()}{MCP2517\_assertCS()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+assert\+CS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a320dd5db3e03bbc2a781a41a3d17f8ec}\label{_m_c_p2517_8h_a320dd5db3e03bbc2a781a41a3d17f8ec}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_deassertCS@{MCP2517\_deassertCS}}
+\index{MCP2517\_deassertCS@{MCP2517\_deassertCS}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_deassertCS()}{MCP2517\_deassertCS()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+deassert\+CS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a885736f875a71d717393ccad8918c32b}\label{_m_c_p2517_8h_a885736f875a71d717393ccad8918c32b}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_getMode@{MCP2517\_getMode}}
+\index{MCP2517\_getMode@{MCP2517\_getMode}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_getMode()}{MCP2517\_getMode()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+C\+P2517\+\_\+get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_aaf22caee335155162b3debab8c9f7fa1}\label{_m_c_p2517_8h_aaf22caee335155162b3debab8c9f7fa1}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_init@{MCP2517\_init}}
+\index{MCP2517\_init@{MCP2517\_init}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_init()}{MCP2517\_init()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_af625112001b94c551e01c5f79a2a983c}\label{_m_c_p2517_8h_af625112001b94c551e01c5f79a2a983c}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_loadMsgTXFifo@{MCP2517\_loadMsgTXFifo}}
+\index{MCP2517\_loadMsgTXFifo@{MCP2517\_loadMsgTXFifo}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_loadMsgTXFifo()}{MCP2517\_loadMsgTXFifo()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+load\+Msg\+T\+X\+Fifo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_m_c_p2517__defines_8h_aafd36d70e86c0bbabb17a84e3a35c17b}{M\+C\+P2517\+\_\+\+T\+X\+\_\+\+M\+S\+G\+\_\+\+O\+BJ}} $\ast$}]{tx\+Obj,  }\item[{uint8\+\_\+t $\ast$}]{payload,  }\item[{uint8\+\_\+t}]{num\+Data\+Bytes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a923a79b104c6e86f71bbce3cb22f6a50}\label{_m_c_p2517_8h_a923a79b104c6e86f71bbce3cb22f6a50}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_readMsgReceive@{MCP2517\_readMsgReceive}}
+\index{MCP2517\_readMsgReceive@{MCP2517\_readMsgReceive}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_readMsgReceive()}{MCP2517\_readMsgReceive()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+read\+Msg\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} $\ast$}]{receive\+ID,  }\item[{uint8\+\_\+t $\ast$}]{num\+Data\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{\mbox{\hyperlink{_m_c_p2517__defines_8h_a5ccdc7c23ddf5a3887057ea1a2e88890}{M\+C\+P2517\+\_\+\+R\+X\+\_\+\+M\+S\+G\+\_\+\+O\+BJ}} $\ast$}]{rx\+Obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_abede1aa660d5d38830433b7760a4547e}\label{_m_c_p2517_8h_abede1aa660d5d38830433b7760a4547e}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_readReg32@{MCP2517\_readReg32}}
+\index{MCP2517\_readReg32@{MCP2517\_readReg32}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_readReg32()}{MCP2517\_readReg32()}}
+{\footnotesize\ttfamily uint32\+\_\+t M\+C\+P2517\+\_\+read\+Reg32 (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{reg\+Addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_ab8881a11edf4195504af59857330818a}\label{_m_c_p2517_8h_ab8881a11edf4195504af59857330818a}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_readReg8@{MCP2517\_readReg8}}
+\index{MCP2517\_readReg8@{MCP2517\_readReg8}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_readReg8()}{MCP2517\_readReg8()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+C\+P2517\+\_\+read\+Reg8 (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{reg\+Addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_ab416dda4179f992f979d900676a29eb4}\label{_m_c_p2517_8h_ab416dda4179f992f979d900676a29eb4}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_receiveFifoStatus@{MCP2517\_receiveFifoStatus}}
+\index{MCP2517\_receiveFifoStatus@{MCP2517\_receiveFifoStatus}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_receiveFifoStatus()}{MCP2517\_receiveFifoStatus()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+C\+P2517\+\_\+receive\+Fifo\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_m_c_p2517__defines_8h_afcb9d132da58bf26b620714b1b825e01}{M\+C\+P2517\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H\+A\+N\+N\+EL}}}]{channel,  }\item[{\mbox{\hyperlink{_m_c_p2517__defines_8h_a08e23b2606a076c5fa2a98d582c72845}{M\+C\+P2517\+\_\+\+R\+X\+\_\+\+F\+I\+F\+O\+\_\+\+S\+T\+A\+T\+US}} $\ast$}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_ac4b246f434e43f50d1221fdb91e6f7c1}\label{_m_c_p2517_8h_ac4b246f434e43f50d1221fdb91e6f7c1}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_recieveMessage@{MCP2517\_recieveMessage}}
+\index{MCP2517\_recieveMessage@{MCP2517\_recieveMessage}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_recieveMessage()}{MCP2517\_recieveMessage()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+recieve\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_m_c_p2517_8h_a9548c3ca82c5a0bc5c94fcdd448bd896}{C\+A\+N\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} $\ast$}]{receive\+ID,  }\item[{uint8\+\_\+t $\ast$}]{num\+Data\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+L\+E\+D\+\_\+\+B\+\_\+\+ON;\mbox{\Hypertarget{_m_c_p2517_8h_a8edc090c194058c4d6dc3baeca8a82bc}\label{_m_c_p2517_8h_a8edc090c194058c4d6dc3baeca8a82bc}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_reset@{MCP2517\_reset}}
+\index{MCP2517\_reset@{MCP2517\_reset}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_reset()}{MCP2517\_reset()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a33ef38b9789aea0ac742c3c3e5a8fa91}\label{_m_c_p2517_8h_a33ef38b9789aea0ac742c3c3e5a8fa91}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_setMode@{MCP2517\_setMode}}
+\index{MCP2517\_setMode@{MCP2517\_setMode}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_setMode()}{MCP2517\_setMode()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_m_c_p2517__defines_8h_aae8af2d6118d3587fdc55089424260e2}{M\+C\+P2517\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+DE}}}]{op\+Mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_ac58b011d7d4285af02de62a6c750b384}\label{_m_c_p2517_8h_ac58b011d7d4285af02de62a6c750b384}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_testRAM@{MCP2517\_testRAM}}
+\index{MCP2517\_testRAM@{MCP2517\_testRAM}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_testRAM()}{MCP2517\_testRAM()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+test\+R\+AM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a2cb9e995d550850500b5db5f7e43381e}\label{_m_c_p2517_8h_a2cb9e995d550850500b5db5f7e43381e}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_transmitFifoStatus@{MCP2517\_transmitFifoStatus}}
+\index{MCP2517\_transmitFifoStatus@{MCP2517\_transmitFifoStatus}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_transmitFifoStatus()}{MCP2517\_transmitFifoStatus()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+C\+P2517\+\_\+transmit\+Fifo\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_m_c_p2517__defines_8h_afcb9d132da58bf26b620714b1b825e01}{M\+C\+P2517\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H\+A\+N\+N\+EL}}}]{channel,  }\item[{\mbox{\hyperlink{_m_c_p2517__defines_8h_a574ba05fbd07d11dc523ed5e318f8662}{M\+C\+P2517\+\_\+\+T\+X\+\_\+\+F\+I\+F\+O\+\_\+\+S\+T\+A\+T\+US}} $\ast$}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_afb015874124e15ccb43775bf1e3765ce}\label{_m_c_p2517_8h_afb015874124e15ccb43775bf1e3765ce}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_transmitMessage@{MCP2517\_transmitMessage}}
+\index{MCP2517\_transmitMessage@{MCP2517\_transmitMessage}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_transmitMessage()}{MCP2517\_transmitMessage()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+C\+P2517\+\_\+transmit\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_m_c_p2517_8h_ac09234edb6207d19ab75b68a411bbf55}{C\+A\+N\+\_\+\+S\+E\+N\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}}]{can\+Message\+ID,  }\item[{uint8\+\_\+t}]{num\+Data\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{message\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a84651ed667626236e19d789207f8ac59}\label{_m_c_p2517_8h_a84651ed667626236e19d789207f8ac59}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_writeReg32@{MCP2517\_writeReg32}}
+\index{MCP2517\_writeReg32@{MCP2517\_writeReg32}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_writeReg32()}{MCP2517\_writeReg32()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+write\+Reg32 (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{reg\+Addr,  }\item[{const uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a494bb1ecd2db11d5437dc414f6c5bbbc}\label{_m_c_p2517_8h_a494bb1ecd2db11d5437dc414f6c5bbbc}} 
+\index{MCP2517.h@{MCP2517.h}!MCP2517\_writeReg8@{MCP2517\_writeReg8}}
+\index{MCP2517\_writeReg8@{MCP2517\_writeReg8}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{MCP2517\_writeReg8()}{MCP2517\_writeReg8()}}
+{\footnotesize\ttfamily void M\+C\+P2517\+\_\+write\+Reg8 (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{reg\+Addr,  }\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_m_c_p2517_8h_a7ddec03593766064dc5ddd2612fd4ffd}\label{_m_c_p2517_8h_a7ddec03593766064dc5ddd2612fd4ffd}} 
+\index{MCP2517.h@{MCP2517.h}!wordFromBufferAtIndex@{wordFromBufferAtIndex}}
+\index{wordFromBufferAtIndex@{wordFromBufferAtIndex}!MCP2517.h@{MCP2517.h}}
+\doxysubsubsection{\texorpdfstring{wordFromBufferAtIndex()}{wordFromBufferAtIndex()}}
+{\footnotesize\ttfamily uint32\+\_\+t word\+From\+Buffer\+At\+Index (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{buff\mbox{[}$\,$\mbox{]},  }\item[{const uint8\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

@@ -1,10 +1,8 @@
-/*****************************************************************************
-* @file    firmware/QUTMS_HVBoard_Firmware/adc.c
-* @author  Zoe Goodward
-* @version V1.0.0
-* @date    2/08/2019 1:12:41 PM
-* @brief   Analogue to digital conversion
-*****************************************************************************/
+/**
+ * @file adc.h
+ * @author Zoe Goodward
+ * @brief Analogue to digital conversion
+ * */
 
 #ifndef ADC_H_
 #define ADC_H_

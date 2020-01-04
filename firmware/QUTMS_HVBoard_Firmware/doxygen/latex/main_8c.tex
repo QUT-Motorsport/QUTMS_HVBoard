@@ -1,0 +1,83 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+
+
+\mbox{\hyperlink{main_8c}{main.\+c}}  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$avr/pgmspace.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}U\+A\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+C\+P2517.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+C\+P2517\+\_\+reg.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL /$\ast$ C\+PU clock in Hertz $\ast$/
+\item 
+\#define \mbox{\hyperlink{main_8c_a627e94d7619c9beee2395626583416d2}{B\+I\+T\+\_\+\+V\+A\+L\+UE}}(reg,  pin)~((reg$>$$>$pin) \& 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a00d0d490d884ab4f198e0a69f82c02ad}{H\+V\+\_\+board\+\_\+init}} ()
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a71d361f4f7558157fad98e02916cdcff}{H\+V\+\_\+\+B\+O\+A\+R\+D\+\_\+\+D\+A\+TA}} \mbox{[}3\mbox{]} = \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{main_8c}{main.\+c}} 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a627e94d7619c9beee2395626583416d2}\label{main_8c_a627e94d7619c9beee2395626583416d2}} 
+\index{main.c@{main.c}!BIT\_VALUE@{BIT\_VALUE}}
+\index{BIT\_VALUE@{BIT\_VALUE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{BIT\_VALUE}{BIT\_VALUE}}
+{\footnotesize\ttfamily \#define B\+I\+T\+\_\+\+V\+A\+L\+UE(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{pin }\end{DoxyParamCaption})~((reg$>$$>$pin) \& 1)}
+
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{main.c@{main.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL /$\ast$ C\+PU clock in Hertz $\ast$/}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a00d0d490d884ab4f198e0a69f82c02ad}\label{main_8c_a00d0d490d884ab4f198e0a69f82c02ad}} 
+\index{main.c@{main.c}!HV\_board\_init@{HV\_board\_init}}
+\index{HV\_board\_init@{HV\_board\_init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HV\_board\_init()}{HV\_board\_init()}}
+{\footnotesize\ttfamily void H\+V\+\_\+board\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Consolidates all the functions required for the initialisation of the HV board \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+transmit message packet C\+AN Packet 1 Byte 0 $\vert$ Byte 1 $\vert$ Byte 2 $\vert$ 0b 0, 0, 0, 0, 0, 000 $\vert$ 0b00000000 $\vert$ 0b00000000 $\vert$ HV Sense, I\+MD Alarm, -\/, -\/, -\/, I\+MD State $\vert$ L\+EM Measurement (bits 15-\/8) $\vert$ L\+EM Measurement (bits 7-\/0) $\vert$
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a71d361f4f7558157fad98e02916cdcff}\label{main_8c_a71d361f4f7558157fad98e02916cdcff}} 
+\index{main.c@{main.c}!HV\_BOARD\_DATA@{HV\_BOARD\_DATA}}
+\index{HV\_BOARD\_DATA@{HV\_BOARD\_DATA}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HV\_BOARD\_DATA}{HV\_BOARD\_DATA}}
+{\footnotesize\ttfamily uint8\+\_\+t H\+V\+\_\+\+B\+O\+A\+R\+D\+\_\+\+D\+A\+TA\mbox{[}3\mbox{]} = \{0\}}
+

@@ -1,9 +1,8 @@
-/*
- * QUTMS_HVBoard_Firmware.c
- *
- * Created: 18/09/2019 12:51:26 PM
- * Author : Zoe Goodward
- */
+/**
+ * @file main.c
+ * @author Zoe Goodward
+ * @brief main.c
+ * */
 
 #define F_CPU 16000000UL /* CPU clock in Hertz */
 
@@ -23,15 +22,11 @@
 
 uint8_t HV_BOARD_DATA[3] = {0};
 
-/*============================================================================
-Function:   HV_board_init()
-------------------------------------------------------------------------------
-Purpose :   consolidates all the functions required for the initialisation of
-			the HV board
-Input   :   none
-Returns :   void
-Notes   :
-============================================================================*/
+/**
+ * Consolidates all the functions required for the initialisation of
+ * the HV board
+ * @return void
+ * */
 void HV_board_init() 
 {
 	DDRD = 0b11000010; // LEDs as outputs

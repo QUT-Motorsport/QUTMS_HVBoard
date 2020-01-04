@@ -1,0 +1,61 @@
+\hypertarget{adc_8c}{}\doxysection{adc.\+c File Reference}
+\label{adc_8c}\index{adc.c@{adc.c}}
+
+
+Analogue to digital conversion.  
+
+
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$avr/pgmspace.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{adc_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}{adc\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{adc_8c_af95038404db6216aa1860a35929b90ac}{adc\+\_\+set\+\_\+prescalar}} (uint8\+\_\+t prescalar)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{adc_8c_a67d34c1378ba0871293df7b6a387de60}{adc\+\_\+read}} (uint8\+\_\+t adc\+\_\+channel)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Analogue to digital conversion. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{adc_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}\label{adc_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}} 
+\index{adc.c@{adc.c}!adc\_init@{adc\_init}}
+\index{adc\_init@{adc\_init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_init()}{adc\_init()}}
+{\footnotesize\ttfamily void adc\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes the analogue to digital conversion by first selecting the voltage reference and then setting the A\+DC Enable bit, A\+D\+EN in A\+D\+C\+S\+RA. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{adc_8c_a67d34c1378ba0871293df7b6a387de60}\label{adc_8c_a67d34c1378ba0871293df7b6a387de60}} 
+\index{adc.c@{adc.c}!adc\_read@{adc\_read}}
+\index{adc\_read@{adc\_read}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_read()}{adc\_read()}}
+{\footnotesize\ttfamily uint16\+\_\+t adc\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+\_\+channel }\end{DoxyParamCaption})}
+
+Reads an analogue input voltage and converts it to a 10-\/bit digital value through successive approximation. 
+\begin{DoxyParams}{Parameters}
+{\em adc\+\_\+channel} & Selected analogue input channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pass the 10 bit A\+DC number to requesting function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{adc_8c_af95038404db6216aa1860a35929b90ac}\label{adc_8c_af95038404db6216aa1860a35929b90ac}} 
+\index{adc.c@{adc.c}!adc\_set\_prescalar@{adc\_set\_prescalar}}
+\index{adc\_set\_prescalar@{adc\_set\_prescalar}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_set\_prescalar()}{adc\_set\_prescalar()}}
+{\footnotesize\ttfamily void adc\+\_\+set\+\_\+prescalar (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{prescalar }\end{DoxyParamCaption})}
+
+Sets the prescalar. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

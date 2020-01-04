@@ -1,0 +1,160 @@
+\hypertarget{spi_8h}{}\doxysection{spi.\+h File Reference}
+\label{spi_8h}\index{spi.h@{spi.h}}
+
+
+This file declares the variables and functions that are used for S\+PI.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{spi_8h_ab1dcc9464e3fcb94922386e8a7f53f21}{S\+P\+I\+\_\+\+M\+O\+DE}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_add43c9bea4c3651888ddd858eee36c28}{S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+R\+A\+TE}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_a1039e667b18eb11df8ab4e168546200b}{S\+P\+I\+\_\+\+M\+S\+TR}}~1
+\item 
+\#define \mbox{\hyperlink{spi_8h_ae77748f6ed40c1bc713dbe98e29df4ea}{S\+P\+I\+\_\+\+M\+S\+B\+F\+I\+R\+ST}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_afa9464d1e027eef964a5857fe8b90dca}{S\+P\+I\+\_\+\+I\+N\+T\+\_\+\+E\+N\+A\+B\+LE}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_abcc154757b25dda166dce9045be9ab84}{S\+P\+I\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_a29348dd4519241c6ac23773790cdcbc0}{S\+P\+I\+\_\+\+D\+A\+T\+A\+\_\+\+O\+R\+D\+ER}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_a1125dd08de06106973c5addde9a41687}{S\+P\+I\+\_\+\+M\+S\+T\+R\+\_\+\+M\+O\+DE}}~1
+\item 
+\#define \mbox{\hyperlink{spi_8h_a4cafe948918622f80c27db640c6c23c6}{S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+P\+O\+L\+A\+R\+I\+TY}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_a430ad9ccffd42f4427ba22fcc8167c64}{S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+P\+H\+A\+SE}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_a53afee17bd48bf3bed716e205d99c56c}{S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+R\+A\+T\+E0}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_a6a2fef08c9ee4445775d410da8321646}{S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+R\+A\+T\+E1}}~0
+\item 
+\#define \mbox{\hyperlink{spi_8h_ad073a074d1b6f05b785db2558d922cc7}{D\+B\+L\+\_\+\+C\+LK}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{spi_8h_ae756a6229ad1607c3db6c5ce964ec0e4}{spi\+\_\+init}} (uint8\+\_\+t clk\+Rate0, uint8\+\_\+t clk\+Rate1)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{spi_8h_a294e1c93357a516fb97c2e8c5a64af39}{spi\+\_\+send\+\_\+byte}} (uint8\+\_\+t data)
+\item 
+void \mbox{\hyperlink{spi_8h_a7fccfe54b22144461137578f104388db}{spi\+\_\+transfer\+\_\+buffer}} (uint8\+\_\+t $\ast$buf, uint8\+\_\+t count)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{spi_8h_abad8f17f55a4258840e87d16704535d5}{spi\+\_\+transfer\+\_\+16}} (uint16\+\_\+t data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file declares the variables and functions that are used for S\+PI. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{spi_8h_ad073a074d1b6f05b785db2558d922cc7}\label{spi_8h_ad073a074d1b6f05b785db2558d922cc7}} 
+\index{spi.h@{spi.h}!DBL\_CLK@{DBL\_CLK}}
+\index{DBL\_CLK@{DBL\_CLK}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{DBL\_CLK}{DBL\_CLK}}
+{\footnotesize\ttfamily \#define D\+B\+L\+\_\+\+C\+LK~0}
+
+\mbox{\Hypertarget{spi_8h_a430ad9ccffd42f4427ba22fcc8167c64}\label{spi_8h_a430ad9ccffd42f4427ba22fcc8167c64}} 
+\index{spi.h@{spi.h}!SPI\_CLK\_PHASE@{SPI\_CLK\_PHASE}}
+\index{SPI\_CLK\_PHASE@{SPI\_CLK\_PHASE}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_CLK\_PHASE}{SPI\_CLK\_PHASE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+P\+H\+A\+SE~0}
+
+\mbox{\Hypertarget{spi_8h_a4cafe948918622f80c27db640c6c23c6}\label{spi_8h_a4cafe948918622f80c27db640c6c23c6}} 
+\index{spi.h@{spi.h}!SPI\_CLK\_POLARITY@{SPI\_CLK\_POLARITY}}
+\index{SPI\_CLK\_POLARITY@{SPI\_CLK\_POLARITY}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_CLK\_POLARITY}{SPI\_CLK\_POLARITY}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+P\+O\+L\+A\+R\+I\+TY~0}
+
+\mbox{\Hypertarget{spi_8h_add43c9bea4c3651888ddd858eee36c28}\label{spi_8h_add43c9bea4c3651888ddd858eee36c28}} 
+\index{spi.h@{spi.h}!SPI\_CLK\_RATE@{SPI\_CLK\_RATE}}
+\index{SPI\_CLK\_RATE@{SPI\_CLK\_RATE}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_CLK\_RATE}{SPI\_CLK\_RATE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+R\+A\+TE~0}
+
+\mbox{\Hypertarget{spi_8h_a53afee17bd48bf3bed716e205d99c56c}\label{spi_8h_a53afee17bd48bf3bed716e205d99c56c}} 
+\index{spi.h@{spi.h}!SPI\_CLK\_RATE0@{SPI\_CLK\_RATE0}}
+\index{SPI\_CLK\_RATE0@{SPI\_CLK\_RATE0}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_CLK\_RATE0}{SPI\_CLK\_RATE0}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+R\+A\+T\+E0~0}
+
+\mbox{\Hypertarget{spi_8h_a6a2fef08c9ee4445775d410da8321646}\label{spi_8h_a6a2fef08c9ee4445775d410da8321646}} 
+\index{spi.h@{spi.h}!SPI\_CLK\_RATE1@{SPI\_CLK\_RATE1}}
+\index{SPI\_CLK\_RATE1@{SPI\_CLK\_RATE1}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_CLK\_RATE1}{SPI\_CLK\_RATE1}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+C\+L\+K\+\_\+\+R\+A\+T\+E1~0}
+
+\mbox{\Hypertarget{spi_8h_a29348dd4519241c6ac23773790cdcbc0}\label{spi_8h_a29348dd4519241c6ac23773790cdcbc0}} 
+\index{spi.h@{spi.h}!SPI\_DATA\_ORDER@{SPI\_DATA\_ORDER}}
+\index{SPI\_DATA\_ORDER@{SPI\_DATA\_ORDER}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_DATA\_ORDER}{SPI\_DATA\_ORDER}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+D\+A\+T\+A\+\_\+\+O\+R\+D\+ER~0}
+
+\mbox{\Hypertarget{spi_8h_afa9464d1e027eef964a5857fe8b90dca}\label{spi_8h_afa9464d1e027eef964a5857fe8b90dca}} 
+\index{spi.h@{spi.h}!SPI\_INT\_ENABLE@{SPI\_INT\_ENABLE}}
+\index{SPI\_INT\_ENABLE@{SPI\_INT\_ENABLE}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_INT\_ENABLE}{SPI\_INT\_ENABLE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+I\+N\+T\+\_\+\+E\+N\+A\+B\+LE~0}
+
+\mbox{\Hypertarget{spi_8h_abcc154757b25dda166dce9045be9ab84}\label{spi_8h_abcc154757b25dda166dce9045be9ab84}} 
+\index{spi.h@{spi.h}!SPI\_INTERRUPT@{SPI\_INTERRUPT}}
+\index{SPI\_INTERRUPT@{SPI\_INTERRUPT}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_INTERRUPT}{SPI\_INTERRUPT}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT~0}
+
+\mbox{\Hypertarget{spi_8h_ab1dcc9464e3fcb94922386e8a7f53f21}\label{spi_8h_ab1dcc9464e3fcb94922386e8a7f53f21}} 
+\index{spi.h@{spi.h}!SPI\_MODE@{SPI\_MODE}}
+\index{SPI\_MODE@{SPI\_MODE}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MODE}{SPI\_MODE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+M\+O\+DE~0}
+
+\mbox{\Hypertarget{spi_8h_ae77748f6ed40c1bc713dbe98e29df4ea}\label{spi_8h_ae77748f6ed40c1bc713dbe98e29df4ea}} 
+\index{spi.h@{spi.h}!SPI\_MSBFIRST@{SPI\_MSBFIRST}}
+\index{SPI\_MSBFIRST@{SPI\_MSBFIRST}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MSBFIRST}{SPI\_MSBFIRST}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+M\+S\+B\+F\+I\+R\+ST~0}
+
+\mbox{\Hypertarget{spi_8h_a1039e667b18eb11df8ab4e168546200b}\label{spi_8h_a1039e667b18eb11df8ab4e168546200b}} 
+\index{spi.h@{spi.h}!SPI\_MSTR@{SPI\_MSTR}}
+\index{SPI\_MSTR@{SPI\_MSTR}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MSTR}{SPI\_MSTR}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+M\+S\+TR~1}
+
+\mbox{\Hypertarget{spi_8h_a1125dd08de06106973c5addde9a41687}\label{spi_8h_a1125dd08de06106973c5addde9a41687}} 
+\index{spi.h@{spi.h}!SPI\_MSTR\_MODE@{SPI\_MSTR\_MODE}}
+\index{SPI\_MSTR\_MODE@{SPI\_MSTR\_MODE}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MSTR\_MODE}{SPI\_MSTR\_MODE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+M\+S\+T\+R\+\_\+\+M\+O\+DE~1}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{spi_8h_ae756a6229ad1607c3db6c5ce964ec0e4}\label{spi_8h_ae756a6229ad1607c3db6c5ce964ec0e4}} 
+\index{spi.h@{spi.h}!spi\_init@{spi\_init}}
+\index{spi\_init@{spi\_init}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_init()}{spi\_init()}}
+{\footnotesize\ttfamily void spi\+\_\+init (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{clk\+Rate0,  }\item[{uint8\+\_\+t}]{clk\+Rate1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{spi_8h_a294e1c93357a516fb97c2e8c5a64af39}\label{spi_8h_a294e1c93357a516fb97c2e8c5a64af39}} 
+\index{spi.h@{spi.h}!spi\_send\_byte@{spi\_send\_byte}}
+\index{spi\_send\_byte@{spi\_send\_byte}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_send\_byte()}{spi\_send\_byte()}}
+{\footnotesize\ttfamily uint8\+\_\+t spi\+\_\+send\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{spi_8h_abad8f17f55a4258840e87d16704535d5}\label{spi_8h_abad8f17f55a4258840e87d16704535d5}} 
+\index{spi.h@{spi.h}!spi\_transfer\_16@{spi\_transfer\_16}}
+\index{spi\_transfer\_16@{spi\_transfer\_16}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_transfer\_16()}{spi\_transfer\_16()}}
+{\footnotesize\ttfamily uint16\+\_\+t spi\+\_\+transfer\+\_\+16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{spi_8h_a7fccfe54b22144461137578f104388db}\label{spi_8h_a7fccfe54b22144461137578f104388db}} 
+\index{spi.h@{spi.h}!spi\_transfer\_buffer@{spi\_transfer\_buffer}}
+\index{spi\_transfer\_buffer@{spi\_transfer\_buffer}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_transfer\_buffer()}{spi\_transfer\_buffer()}}
+{\footnotesize\ttfamily void spi\+\_\+transfer\+\_\+buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{uint8\+\_\+t}]{count }\end{DoxyParamCaption})}
+

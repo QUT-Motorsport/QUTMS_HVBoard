@@ -1,14 +1,16 @@
-/*
- * QUTMS_HVBoard_Firmware.c
- *
- * Created: 24/11/2019 11:45:34 AM
- * Author : Zoe Goodward
- */
+/**
+ * @file MCP2517_defines.h
+ * @author Zoe Goodward
+ * @brief MCP2517_defines.h
+ * */
 
 #ifndef MCP2517_defines_H_
 #define MCP2517_defines_H_
 
-// Operation Modes
+/**
+ * Operation Modes.
+ * Operation Modes
+ * */
 typedef enum {
 	MCP2517_NORMAL_MODE = 0x00,
 	MCP2517_SLEEP_MODE = 0x01,
