@@ -1,5 +1,5 @@
 ![QUTMS_Banner](https://raw.githubusercontent.com/Technosasquach/QUTMS_Master/master/src/qutmsBanner.jpg)
-# QUTMS_HVBoard
+# HV Board
 The HV Board resides inside the HB Box directly infront of the accumulator and monitors the tractive system in various ways.
 
 ## Features
