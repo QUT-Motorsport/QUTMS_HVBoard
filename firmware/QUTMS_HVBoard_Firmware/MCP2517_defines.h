@@ -7,10 +7,7 @@
 #ifndef MCP2517_defines_H_
 #define MCP2517_defines_H_
 
-/**
- * Operation Modes.
- * Operation Modes
- * */
+/// Operation Modes
 typedef enum {
 	MCP2517_NORMAL_MODE = 0x00,
 	MCP2517_SLEEP_MODE = 0x01,
@@ -23,7 +20,7 @@ typedef enum {
 	MCP2517_INVALID_MODE = 0xFF
 } MCP2517_OPERATION_MODE;
 
-// Error Codes
+/// Error Codes
 typedef enum {
 	MCP2517_NO_ERROR = 0x01,
 	MCP2517_RAM_ERROR = 0x02,
@@ -31,7 +28,7 @@ typedef enum {
 	MCP2517_MESSAGE_SIZE_ERROR = 0x04
 } MCP2517_ERROR_CODE;
 
-// Receive status
+/// Receive status
 typedef enum {
 	MCP2517_RX_FIFO_EMPTY_STATUS = 0x00,
 	MCP2517_RX_FIFO_NOT_EMPTY_STATUS = 0x01,
@@ -51,9 +48,9 @@ typedef enum {
 	MCP2517_TX_FIFO_ALL_STATUS = 0x17
 } MCP2517_TX_FIFO_STATUS;
 
-// FIFO Channels
+/// FIFO Channels
 typedef enum {
-	MCP2517_FIFO_CH0,   // Reserved for TXQ
+	MCP2517_FIFO_CH0,   /// Reserved for TXQ
 	MCP2517_FIFO_CH1,
 	MCP2517_FIFO_CH2,
 	MCP2517_FIFO_CH3,
@@ -88,7 +85,7 @@ typedef enum {
 	MCP2517_FIFO_CHANNEL_TOTAL
 } MCP2517_FIFO_CHANNEL;
 
-// Channel Filters
+/// Channel Filters
 typedef enum {
 	MCP2517_FILTER0,
 	MCP2517_FILTER1,

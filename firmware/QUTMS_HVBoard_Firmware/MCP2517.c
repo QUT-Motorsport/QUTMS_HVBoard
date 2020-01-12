@@ -23,10 +23,6 @@
 #include "MCP2517_reg.h"
 #include "MCP2517_defines.h"
 
-
-// *****************************************************************************
-// Helper Functions
-// *****************************************************************************
 inline void enterWordInBufferAtIndex (const uint32_t value, uint8_t buff[], const uint8_t index) {
 	buff[index + 0] = (uint8_t) value;
 	buff[index + 1] = (uint8_t) (value >> 8);
@@ -42,10 +38,6 @@ inline uint32_t wordFromBufferAtIndex (uint8_t buff[], const uint8_t index) {
 	return result;
 }
 
-
-// *****************************************************************************
-// SPI Write Functions
-// *****************************************************************************
 inline void MCP2517_writeReg8(const uint16_t regAddr, const uint8_t value) {
 	uint8_t buff[3] = {0};
 
@@ -71,10 +63,6 @@ inline void MCP2517_writeReg32(const uint16_t regAddr, const uint32_t value) {
 	MCP2517_deassertCS();
 }
 
-
-// *****************************************************************************
-// SPI Read Functions
-// *****************************************************************************
 inline uint8_t MCP2517_readReg8(const uint16_t regAddr) {
 	uint8_t buff[3] = {0};
 
@@ -106,9 +94,6 @@ inline uint32_t MCP2517_readReg32(const uint16_t regAddr) {
 	return result;
 }
 
-// *****************************************************************************
-// Assert the MCP2517 CS pin
-// *****************************************************************************
 void MCP2517_assertCS() {
 	CAN_CS_PORT &= ~(1 << CAN_CS);
 }
@@ -117,11 +102,6 @@ void MCP2517_deassertCS() {
 	CAN_CS_PORT |= (1 << CAN_CS);
 }
 
-
-// *****************************************************************************
-// MCP2517 Configuration Functions
-// *****************************************************************************
-// Software reset
 void MCP2517_reset() {
 	uint8_t buff[2] = {0};
 	
@@ -133,18 +113,15 @@ void MCP2517_reset() {
 	MCP2517_deassertCS();
 }
 
-// Set operation mode
 void MCP2517_setMode(MCP2517_OPERATION_MODE opMode) {
 	// Set mode and abort all transactions
 	MCP2517_writeReg8(MCP2517_REG_ADDR_C1CON + 3, opMode | (1 << 3));
 }
 
-// Read current operation mode
 uint8_t MCP2517_getMode() {
 	return (MCP2517_readReg8(MCP2517_REG_ADDR_C1CON + 2) >> 5) & 0x07;
 }
 
-// Test that RAM is reading and writing correctly - !!!!
 void MCP2517_testRAM() {
 	for (uint32_t i = 1 ; i != 0; i <<= 1) {
 		MCP2517_writeReg32(MCP2517_RAM_ADDR_START, i);
@@ -155,7 +132,6 @@ void MCP2517_testRAM() {
 	}
 }
 
-// Initalise the MCP2517 chip
 void MCP2517_init() {
 	//cli(); // Disable interrupts while configuring
 	
@@ -275,11 +251,6 @@ void MCP2517_init() {
 	////sei(); // Re-enable interrupts
 }
 
-
-
-// *****************************************************************************
-// MCP2517 FIFO Status Functions
-// *****************************************************************************
 uint8_t MCP2517_receiveFifoStatus(MCP2517_FIFO_CHANNEL channel, MCP2517_RX_FIFO_STATUS *flags) {
 	uint8_t status = MCP2517_readReg8(MCP2517_REG_ADDR_C1FIFOSTA + (channel * MCP2517_C1FIFO_OFFSET));
 	
@@ -299,10 +270,6 @@ uint8_t MCP2517_transmitFifoStatus(MCP2517_FIFO_CHANNEL channel, MCP2517_TX_FIFO
 	return status;
 }
 
-
-// *****************************************************************************
-// MCP2517 Receive Functions
-// *****************************************************************************
 void MCP2517_recieveMessage(CAN_RECEIVE_ADDRESS *receiveID, uint8_t *numDataBytes, uint8_t *data) {
 	MCP2517_RX_MSG_OBJ rxObj;
 	MCP2517_RX_FIFO_STATUS rxFlags;
@@ -364,9 +331,6 @@ void MCP2517_readMsgReceive(CAN_RECEIVE_ADDRESS *receiveID, uint8_t *numDataByte
 	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_RX_FIFO * MCP2517_C1FIFO_OFFSET), d);
 }
 
-// *****************************************************************************
-// MCP2517 Transmit Functions
-// *****************************************************************************
 uint8_t MCP2517_transmitMessage(CAN_SEND_ADDRESS canMessageID, uint8_t numDataBytes, uint8_t *messageData) {
 	
 	// Check if numDataBytes > 8
@@ -406,7 +370,6 @@ uint8_t MCP2517_transmitMessage(CAN_SEND_ADDRESS canMessageID, uint8_t numDataBy
 	
 	return MCP2517_NO_ERROR;
 }
-
 
 void MCP2517_loadMsgTXFifo(MCP2517_TX_MSG_OBJ *txObj, uint8_t *payload, uint8_t numDataBytes) {
 	
@@ -456,5 +419,3 @@ void MCP2517_loadMsgTXFifo(MCP2517_TX_MSG_OBJ *txObj, uint8_t *payload, uint8_t 
 	const uint8_t d = (1 << 0) | (1 << 1); // Set UINC, TXREQ bit
 	MCP2517_writeReg8(MCP2517_REG_ADDR_C1FIFOCON + (MCP2517_TX_FIFO * MCP2517_C1FIFO_OFFSET) + 1, d);
 }
-
-// RESET CHIP IF GOES TO RESTRICTED ACCESS MODE
