@@ -9,3 +9,9 @@ The HV Board resides inside the HV box directly infront of the accumulator and m
 - IMD state sensing and powering
 - Tractive system current measurement
 - UART debugging header
+
+## Functions
+
+Whilst the BSPD circitry is located on the shutdown board, the HV board powers the device and has an amplifier to boost the signal before it makes its way through the wiring harness.
+
+In order to detect when the tractive system has a voltage more than 60V present, there is an isolated circuit on board that compares a divided TS voltage with a reference voltage. It also has a mosfet to drive the TS active and TS inactive signals to the TSAL board.
